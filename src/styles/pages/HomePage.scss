@@ -12,7 +12,10 @@
     
         @media(max-width: 490px){
             justify-content: space-between;
+            align-items: center;
             padding: 1rem;
+            margin-bottom: 1.861rem;
+            padding-top: 4.5rem;
         }
     
     
@@ -20,12 +23,10 @@
             @import url("https://api.fontshare.com/v2/css?f[]=stardom@400&display=swap");
             font-family: 'Stardom', sans-serif;
             color: #1E1E1E;
-            margin-top: 3.5rem;
             font-size: 2.3rem;
             text-align: center;
     
             @media(max-width: 490px){
-                margin-bottom: 2.1rem;
                 font-size: 2.1rem;
             }
         }
@@ -136,9 +137,6 @@
         .menu{
             width: 24px;
             height: 24px;
-            margin-top: 4rem;
-            margin-bottom: 2.323rem;
-    
             @media(min-width: 490px){
                 display: none;
             }
@@ -182,18 +180,23 @@
             width: 21.654rem;
             height: 232px;
             margin-bottom: 1rem;
-
             @media(min-width: 621px){
                 display: none;
             }
-
-            @media(max-width: 360px){
-                width: 19.5rem;
+            @media(max-width: 390px){
+                max-width: 22.375rem;
+                height: 13.923rem;
             }
         }
 
         &__info{
-            
+            @media (max-width: 425px){
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                justify-content: center;
+                padding: 0 1rem;
+            }
 
             &__one{
                 color: #212127;
@@ -202,8 +205,6 @@
                 max-width: 25rem;
                 margin-bottom: 1.563rem;
                 margin-top: 10.625rem;
-
-                
                 @media(max-width: 1030px){
                     margin-top: 6rem;
                 }
@@ -244,9 +245,17 @@
                     margin-top: 0rem;
                 }
 
-                @media(max-width: 345px){
-                    font-size: 2.2rem;
-                    max-width: 19.9rem;
+                @media(max-width: 390px){
+                    font-family: 'Stardom';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 2.5rem;
+                    line-height: 3.188rem;
+                    margin-bottom: 0.938rem;
+                    letter-spacing: -0.03em;
+                    max-width: 22.375rem;
+                    color: #212127;
+
                 }
 
             }
@@ -277,9 +286,15 @@
                 }
                 
                 @media(max-width: 620px){
-                    font-size: 1rem;
-                    max-width: 20.375rem;
-                    margin-bottom: 0rem;
+                    font-family: 'Lexend';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 1.25rem;
+                    line-height: 1.813rem;
+                    max-width: 22.375rem;
+                    width: 100%;
+                    letter-spacing: -0.03em;
+                    color: #3F464A;
                 }
 
             }
@@ -362,6 +377,7 @@
             gap: 1rem;
         }
         @media(max-width: 475px){
+            padding-bottom: 0;
             padding: 1rem;
         }
 
@@ -407,7 +423,7 @@
             &__two{
                 width: 21.654rem;
                 margin-bottom: 0rem;
-                margin-top: -2.5rem;
+                margin-top: -2.9rem;
 
                 @media(min-width: 621px){
                     display: none;
@@ -420,10 +436,6 @@
         }
 
         &__text{
-
-            @media(max-width: 620px){
-                margin-bottom: 2rem;
-            }
             &__step{
                 @import url('https://api.fontshare.com/v2/css?f[]=stardom@400&display=swap');
                 font-family: 'Stardom';
@@ -473,7 +485,7 @@
                 font-size: 1.25rem;
                 font-weight: 400;
                 color: #A5B0B6;
-                margin-top: 2.563rem;
+                margin-top: 1.511rem;
                 gap: 5.375rem;
 
                 @media(max-width: 620px){
@@ -488,12 +500,54 @@
                 }
 
                 @media(max-width: 850px){
-                    gap: 2.5rem;
+                    gap: 2.875rem;
                     font-size: 0.9rem;
                 }
 
-                .images{
-                    margin-bottom: 1.438rem;
+                &__one{
+                    font-family: 'Lexend';
+                    @media (max-width: 390px){
+                        font-weight: 400;
+                        font-size: 1.25rem;
+                        line-height: 1.875rem;
+                    }
+                }
+                &__two{
+                    font-family: 'Lexend';
+                    @media (max-width: 390px){
+                        font-weight: 400;
+                        font-size: 1.25rem;
+                        line-height: 1.875rem;
+                        width: 100%;
+                        letter-spacing: -0.03em;
+                        font-family: 'Lexend';
+                        max-width: 22.375rem;
+                    }
+                }
+                &__three{
+                    font-family: 'Lexend';
+                    @media (max-width: 390px){
+                        margin-bottom: 5.5rem;
+                        font-weight: 400;
+                        font-size: 1.25rem;
+                        line-height: 1.875rem;
+                    }
+                }
+
+                &__images1{
+                    @media (max-width: 390px){
+                        margin-bottom: 1.198rem;
+                    }
+                }
+                &__image2{
+                    @media (max-width: 390px){
+                        margin-bottom: 0.813rem;
+                    }
+                }
+                &__image3{
+                    @media (max-width: 390px){
+                        margin-bottom: 0.813rem;
+                    }
                 }
             }
         }
@@ -530,8 +584,8 @@
             display: flex;
             gap: 0rem;
             flex-direction: column;
+            padding: 0 1rem;
             justify-content: center;
-            align-items: center;
         }
         
 
@@ -572,6 +626,7 @@
                 }
 
                 @media(max-width: 360px){
+                    margin-bottom: 2.147rem;
                     max-width: 19rem;
                 }
             }
@@ -594,11 +649,15 @@
                 }
 
                 @media(max-width: 645px){
+                    font-family: 'Stardom';
+                    margin-bottom: 1.25rem;
+                    line-height: 3.25rem;
+                    letter-spacing: -0.03em;
+                    margin-top: 0;
                     font-size: 2.5rem;
                 }
             }
             &__small{
-                @import url('https://fonts.googleapis.com/css?family=Lexend');
                 font-family: 'Lexend', sans-serif;
                 font-weight: 400;
                 font-size: 1.25rem;
@@ -617,8 +676,14 @@
                     font-size: 1.25rem;
                 }
 
-                @media(max-width: 360px){
-                    max-width: 19rem;
+                @media(max-width: 390px){
+                    font-family: 'Lexend';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 1.25rem;
+                    line-height: 1.875rem;
+                    margin-bottom: 2.375rem;
+                    letter-spacing: -0.03em;
                 }
             }
 
@@ -654,6 +719,7 @@
 
                     @media(max-width: 360px){
                         max-width: 20rem;
+                        margin-bottom: 4.313rem;
                     }
                 }
 
@@ -775,9 +841,14 @@
     .footer{
         width: 100%;
         margin: 0 auto;
-        padding-top: 5rem;
+        padding-top: 5.438rem;
         padding-bottom: 5rem;
+        padding-right: 1.125rem;
+        padding-left: 1rem;
         margin: auto;
+        @media (max-width: 390px){
+            padding-bottom: 0;
+        }
         &__top{
             /*width: 100%;
             margin: 0 auto;*/
@@ -791,12 +862,8 @@
             @media(max-width: 620px){
                 flex-direction: column;
                 max-width: 22rem;
-                margin-left: 2rem;
             } 
 
-            @media(max-width: 360px){
-                margin-left: 1rem;
-            } 
 
             &__about{
 
@@ -842,8 +909,15 @@
                         margin-bottom: 3.75rem;
                     }
 
-                    @media(max-width: 360px){
-                        max-width: 19rem;
+                    @media(max-width: 390px){
+                        font-family: 'Lexend';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 1rem;
+                        line-height: 1.438rem;
+                        letter-spacing: -0.03em;
+                        max-width: unset;
+                        color: #3F464A;
                     } 
 
                 }
@@ -857,6 +931,14 @@
                 font-size: 1.188rem;
                 line-height: 3.125rem;
                 
+                p{
+                    font-family: 'Lexend';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 1.25rem;
+                    letter-spacing: -0.03em;
+                    color: #3F464A;
+                }
 
                 @media(max-width: 810px){
                     font-size: 0.9rem;
@@ -866,25 +948,44 @@
                     font-size: 1.25rem;
                     align-items: flex-start;
                 } 
+                @media (max-width: 425px){
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+                    margin-bottom: 2rem;
+                }
 
             }
 
             &__options-two{
-                color: #3F464A;
                 @import url('https://fonts.googleapis.com/css?family=Lexend');
                 font-family: 'Lexend', sans-serif;
                 font-weight: 400;
+                color: #3F464A;
                 font-size: 1.188rem;
                 line-height: 3.125rem;
-
+                margin-bottom: 2.375rem;
                 @media(max-width: 810px){
                     font-size: 0.9rem;
+                }
+                p{
+                    font-family: 'Lexend';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 1.25rem;
+                    letter-spacing: -0.03em;
+                    color: #3F464A;
                 }
 
                 @media(max-width: 620px){
                     font-size: 1.25rem;
                     align-items: flex-start;
                 } 
+                @media (max-width: 425px){
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+                }
             }
 
             &__options-three{
@@ -898,12 +999,11 @@
                 &__contact{
                     margin-bottom: 2.75rem;
 
-                    .footer-email{
+                    &__footer-email{
                         display: flex;
                         flex-direction: row;
                         gap: 1.938rem;
                         margin-bottom: 1.688rem;
-                        margin-top: 0.7rem;
                         color: #3F464A;
                         @import url('https://fonts.googleapis.com/css?family=Lexend');
                         font-family: 'Lexend', sans-serif;
@@ -923,6 +1023,7 @@
                         @media(max-width: 620px){
                             font-size: 1.25rem;
                             gap: 1.8rem;
+                            margin-bottom: 3.563rem;
                         } 
 
 
@@ -937,7 +1038,7 @@
                         }
                     }
 
-                    .footer-contact{
+                    &__footer-contact{
                         display: flex;
                         flex-direction: row;
                         gap: 1.938rem;
@@ -959,6 +1060,7 @@
 
                         @media(max-width: 620px){
                             font-size: 1.25rem;
+                            margin-bottom: 3rem;
                             gap: 1.8rem;
                         } 
 
@@ -975,14 +1077,15 @@
                     }
                 }
 
-                .socials{
+                &__socials{
                     display: flex;
-
                     @media(max-width: 620px){
                         flex-direction: column;
-                        gap:1rem;
+                        gap:1.226rem;
                     }
-
+                    &__icon{
+                        margin-left: 0;
+                    }
                     &__text{
                         color: #3F464A;
                         @import url('https://fonts.googleapis.com/css?family=Lexend');
@@ -1003,36 +1106,43 @@
                             font-size: 1.25rem;
                         }
                     }
-
                     &__handles{
                         display: flex;
                         flex-direction: row;
                         gap: 0.625rem;
-
                         @media(max-width: 810px){
                             gap: 0.3rem;
                         }
-
                         @media(max-width: 650px){
                             gap: 0.2rem;
                         }
-
-                        &__icons{
-                            width: 20px;
-                            height: 20px;
-
-                            @media(max-width: 620px){
-                                display: none;
-                            } 
-                        }
-
-                        &__icon{
-                            margin-left: 1rem;
-
-                            @media(min-width: 621px){
+                        &__main{
+                            &__icons{
+                                @media (max-width: 400px){
                                 display: none;
                             }
+                            }
                         }
+                        &__main1{
+                            @media (max-width: 425px){
+                                display: flex;
+                                gap: 1.226rem;
+                                margin-top: 1rem;
+                            }
+                        }
+                        // &__icons{
+                        //     width: 20px;
+                        //     height: 20px;
+                        //     @media(max-width: 620px){
+                        //         display: none;
+                        //     } 
+                        // }
+                        // &__icon{
+                        //     margin-left: 1rem;
+                        //     @media(min-width: 621px){
+                        //         display: none;
+                        //     }
+                        // }
                     }
                 }
             }
@@ -1043,7 +1153,7 @@
             text-align: center;
             justify-content: center;
             align-items: center;
-            margin-top: 4.188rem;
+            margin-top: 4.375rem;
             margin-bottom: 2.188rem;
             color: #3F464A;
             @import url('https://fonts.googleapis.com/css?family=Lexend');

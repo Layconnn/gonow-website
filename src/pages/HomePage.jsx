@@ -43,16 +43,16 @@ function Homepage(){
                     <p className="get-started__text__step">Get started in 3 easy steps</p>
                     <div className="get-started__text__steps">
                         <div>
-                            <img src ="./images/youtube.svg" className="images"/>
-                            <p className="get-started__text__step__one">Watch online learning videos.</p>
+                            <img src ="./images/youtube.svg" className="get-started__text__steps__images1"/>
+                            <p className="get-started__text__steps__one">Watch online learning videos.</p>
                         </div>
                         <div>
-                            <img src="./images/clipboard-list.svg" className="images"/>
-                            <p className="get-started__text__step__two">Get assigned to tasks and earn money.</p>
+                            <img src="./images/clipboard-list.svg" className="get-started__text__steps__images2"/>
+                            <p className="get-started__text__steps__two">Get assigned to tasks and earn money.</p>
                         </div>
                         <div>
-                            <img src="./images/rocket.svg" className="images"/>
-                            <p className="get-started__text__step__three">Get access to interview coaching for your career.</p>
+                            <img src="./images/rocket.svg" className="get-started__text__steps__images3"/>
+                            <p className="get-started__text__steps__three">Get access to interview coaching for your career.</p>
                         </div>
                     </div>
                 </div>
@@ -97,26 +97,30 @@ function Homepage(){
                     </div>
                     <div className="footer__top__options-three">
                         <div className="footer__top__options-three__contact">
-                            <div className="footer-email">
+                            <div className="footer__top__options-three__contact__footer-email">
                                 <img className="footer-email__icon" src="./images/mail.svg"/>
                                 <p>info@gonow.com</p>
                             </div>
-                            <div className="footer-contact">
+                            <div className="footer__top__options-three__contact__footer-contact">
                                 <img className="footer-contact__icon" src="./images/phone-call.svg"/>
                                 <p>0810 0000 000</p>
                             </div>
                         </div>
-                        <div className="socials">
-                            <p className="socials__text">Follow us</p>
-                            <div className="socials__handles">
-                                <img className="socials__handles__icons" src="./images/facedbook.svg"/>
-                                <img className="socials__handles__icons" src="./images/instagram.svg"/>
-                                <img className="socials__handles__icons" src="./images/linkedin.svg"/>
-                                <img className="socials__handles__icons" src="./images/twitter.svg"/>
-                                <img className="socials__handles__icon" src="./images/facedbook-two.svg"/>
-                                <img className="socials__handles__icon" src="./images/instagram-two.svg"/>
-                                <img className="socials__handles__icon" src="./images/linkedin-two.svg"/>
-                                <img className="socials__handles__icon" src="./images/twitter-two.svg"/>
+                        <div className="footer__top__options-three_socials">
+                            <p className="footer__top__options-three_socials__text">Follow us</p>
+                            <div className="footer__top__options-three_socials__handles">
+                                <div className="footer__top__options-three_socials__handles__main">
+                                    <img className="footer__top__options-three__socials__handles__main__icons" src="./images/facedbook.svg"/>
+                                    <img className="footer__top__options-three__socials__handles__main__icons" src="./images/instagram.svg"/>
+                                    <img className="footer__top__options-three__socials__handles__main__icons" src="./images/linkedin.svg"/>
+                                    <img className="footer__top__options-three__socials__handles__main__icons" src="./images/twitter.svg"/>
+                                </div>
+                                <div className="footer__top__options-three__socials__handles__main1">
+                                    <img className="footer__top__options-three__socials__handles__main1__icon" src="./images/facedbook-two.svg"/>
+                                    <img className="footer__top__options-three__socials__handles__main1__icon" src="./images/instagram-two.svg"/>
+                                    <img className="footer__top__options-three__socials__handles__main1__icon" src="./images/linkedin-two.svg"/>
+                                    <img className="footer__top__options-three__socials__handles__main1__icon" src="./images/twitter-two.svg"/>
+                                </div>
                             </div>
                         </div>
                     </div>

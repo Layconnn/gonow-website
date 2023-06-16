@@ -1,11 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import Input from "../components/Input/Input";
 import { useNavigate } from "react-router";
+import Api from "../api/api";
 /*import Header from "../components/Header/Header";*/
 
 function Business(){
+    const [values, setValues] = useState({
+        name: "",
+        phone: "",
+        email: "",
+        is_whatsapp: ""
+    })
     const date = new Date();
+    const url = 'https://api-staging.liveable.ng/go/landing';
     const route = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        Api.post(url, {
+          name: values.name,
+          phone: values.phone,
+          email: values.email,
+          is_whatsapp: values.is_whatsapp
+        } )
+        .then((response) => {console.log(response.data)} )
+        .catch(err => console.log(err));
+    };
+
+    const handleChange = (e) => {
+        const newData = {...values}
+        newData[e.target.name] = e.target.value;
+        setValues(newData)
+      };
 
     return(
         <div className="Business-page">
@@ -40,11 +66,28 @@ function Business(){
             <div className="signup-form">
                 <p className="signup-form__header">Sign up to create a task</p>
                 <div className="signup-form__info">
-                    <Input className='signup-form__info__first-name' placeholder ="First Name" type="text"/>
-                    <Input className='signup-form__info__last-name' placeholder ="Last Name" type="text"/>
-                    <Input className='signup-form__info__email' placeholder ="Email Address" type="email"/> 
-                    <Input className='signup-form__info__whatsapp-number' placeholder ="Whatsapp Number" type="text"/>
-                    <div className="signup-form__info__button">Go Now</div>
+                    <form onSubmit={(e) => handleSubmit(e)}>
+                        <Input className='signup-form__info__first-name' placeholder ="First Name" values={values.name} type="text"
+                        name='name'
+                        onChange={(e) => handleChange(e)}
+                        />
+                        <Input className='signup-form__info__last-name' placeholder ="Last Name" type="text"
+                        values={values.phone}
+                        name='phone'
+                        onChange={(e) => handleChange(e)}
+                        />
+                        <Input className='signup-form__info__email' placeholder ="Email Address" type="email"
+                        values={values.email}
+                        name='email'
+                        onChange={(e) => handleChange(e)}
+                        /> 
+                        <Input className='signup-form__info__whatsapp-number' placeholder ="Whatsapp Number" type="text"
+                        values={values.is_whatsapp}
+                        name='is_whatsapp'
+                        onChange={(e) => handleChange(e)}
+                        />
+                        <button type="submit" className="signup-form__info__button">Go Now</button>
+                    </form>
                 </div>
             </div>
             <div className="footer">
