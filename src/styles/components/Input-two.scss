@@ -1,0 +1,83 @@
+.placeholder{                  
+    background: #0B88DF;
+    border: 0.063rem solid white;
+    transition: border-color 0.3s ease;
+    border-radius: 0.313rem;
+    padding-top: 1.625rem;
+    padding-bottom: 1.625rem;
+    padding-left: 1.25rem;
+    max-width: 28.688rem;
+    padding-right: 1rem;
+    width: 100%;
+    &__label{
+        font-family: 'Lexend';
+        font-weight: 400;
+        font-size: 1.063rem;
+        line-height: 1rem;
+        outline: none;
+        letter-spacing: -0.02em;
+        color: #D7EEFF;
+        transition: transform 0.3s ease;
+        @media (max-width: 500px){
+            line-height: unset;
+            padding-bottom: 0;
+        }
+    }
+    &__input-one{
+        font-family: 'Lexend';
+        font-weight: 400;
+        font-size: 1.063rem;
+        display: block;
+        outline: none;
+        border: 2px solid #0B88DF;
+        line-height: 1.313rem;
+        background-color: #0B88DF;
+        letter-spacing: -0.02em;
+        transition: all ease-in-out 0.3s;
+        color: #1E1E1E;
+        display: none;
+        cursor: text;
+        width: 100%;
+        @media (max-width: 500px){
+            line-height: unset;
+        }
+    }
+    &__input-one::placeholder{
+        color: white;
+
+    }
+    // &__error{
+    //     display: none;
+    //     color: red;
+    //     padding: 0.313rem;
+    //     padding-left: 0;
+    //     padding-bottom: 0;
+    //     font-size: 1rem;
+    //     font-family: 'Lexend';
+    // }
+   
+}
+
+
+.show{
+    @media (max-width: 500px){
+        padding-top: 1rem;
+        padding-bottom: 0.938rem;
+    }
+}
+
+.show__input-one{
+    display: block;
+    transition: ease-in-out 0.3s;
+    @media (max-width: 500px){
+        font-size: 1.063rem;
+    }
+}
+
+.show__label{
+    transform: translateY(-0.313rem);
+    font-size: 0.813rem;
+    @media (max-width: 500px){
+        transform: translateY(-0.19rem);
+    }
+}

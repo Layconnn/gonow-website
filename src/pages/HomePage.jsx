@@ -1,5 +1,5 @@
 import React from "react";
-import Inputtwo from "../components/Input/Inputtwo";
+import Inputtwo from "../components/Inputtwo";
 import "../styles/pages/HomePage.scss";
 import { useNavigate } from "react-router";
 import Footer from "../components/footer";
@@ -69,12 +69,22 @@ function Homepage(){
                     <p className="form__info__big">I am interested</p>
                     <p className="form__info__small">Curabitur sollicitudin elit est vitae placerateros convallis eu. Must be between age 15-24.</p>
                     <form className="form__info__details">
-                        <Inputtwo className='full-name' placeholder ="   Full Name" type="text"/>
-                        <Inputtwo className='phone-number' placeholder ="   Phone Number" type="text"/>
-                        <Inputtwo className='email' placeholder ="   Email Address" type="email"/> 
+                        <Inputtwo 
+                        h5 ="Full Name" 
+                        placeholder = 'Jane Doe'
+                        type="text"/>
+                        <Inputtwo 
+                        h5 ="Phone Number" 
+                        placeholder = '08137829472'
+                        type="tel"
+                        />
+                        <Inputtwo 
+                        h5='Email Address'
+                        placeholder ="johnDoe@mail.com" 
+                        type="email"
+                        /> 
                         <select className="education-level" id="education-level"> 
                             <option value="highest-education-level"> Highest level of Education</option>
-                            <option value=""></option> 
                             <option value="">Dave</option> 
                             <option value="">Pumpernickel</option> 
                             <option value="">Reeses</option> 
