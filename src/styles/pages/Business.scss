@@ -392,15 +392,17 @@
                 max-width: 22.5rem;
             }
 
-            @media(max-width: 450px){
+            @media(max-width: 500px){
+                max-width: 24.375rem;
+            }
+
+            @media(max-width: 425px){
                 max-width: 22.375rem;
             }
-
-            @media(max-width: 400px){
+            @media (max-width: 380px){
                 max-width: 20.375rem;
             }
-
-            @media(max-width: 345px){
+            @media (max-width: 350px){
                 max-width: 18.375rem;
             }
 
@@ -821,7 +823,6 @@
         padding-top: 0.5rem;
     }
     @media (max-width: 500px){
-        font-size: 0.5rem;
         padding-top: 0.3rem;
     }
 }

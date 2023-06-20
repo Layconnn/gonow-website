@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/pages/Business.scss";
-import Input from "../components/Input/Input";
+// import Input from "../components/Input/Input";
 import InputWithPlaceholder from "../components/inputWithPlaceholder";
 import Validation from "../components/validation";
 import { useNavigate } from "react-router";
@@ -41,9 +41,7 @@ function Business(){
             router('/')
         } else if(!values.name && !values.is_whatsapp && !values.email && !values.phone){
             errors
-        } else{
-            router('/')
-        }
+        } 
     };
 
     const handleInput = (e) => {
@@ -67,7 +65,7 @@ function Business(){
              <div className="top__GoNow">Go Now</div>
              <div className="top-panel__menu-button">
                  <img src="./images/menu.svg" className="menu"/>
-                 <div class="dropdown-content">
+                 <div className="dropdown-content">
                      <p onClick={() => router('/')}>Home</p>
                      <p>Create tasks</p>
                      <p onClick={() => router('/business')}>For Business</p>
