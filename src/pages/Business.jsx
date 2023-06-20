@@ -9,15 +9,21 @@ import Footer from "../components/footer";
 /*import Header from "../components/Header/Header";*/
 
 function Business(){
+    const [isWhatsAppNumber, setIsWhatsAppNumber] = useState(false);
     const [values, setValues] = useState({
         name: "",
         phone: "",
         email: "",
-        is_whatsapp: ""
+        is_whatsapp: false
     })
     const url = 'https://api-staging.liveable.ng/go/landing';
     const router = useNavigate();
     const [errors, setErrors] = useState({})
+
+    const handleCheckboxChange = (e) => {
+        values.is_whatsapp = true
+        setIsWhatsAppNumber(e.target.checked);
+      };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,7 +32,7 @@ function Business(){
           name: values.name,
           phone: values.phone,
           email: values.email,
-          is_whatsapp: values.is_whatsapp
+          is_whatsapp: isWhatsAppNumber
         } )
         .then((response) => {console.log(response.data)} )
         .catch(err => console.log(err));
@@ -53,17 +59,17 @@ function Business(){
           <div className="top">
              <p className="top__logo">GoNow</p>
              <div className="top__navbar">
-                 <p className="top__navbar__link" onClick={() => route('/')}>Home</p>
+                 <p className="top__navbar__link" onClick={() => router('/')}>Home</p>
                  <p className="top__navbar__linktwo">Create tasks</p>
-                 <p className="top__navbar__linkthree" onClick={() => route('/business')}>For Business</p>
+                 <p className="top__navbar__linkthree" onClick={() => router('/business')}>For Business</p>
              </div>
              <div className="top__GoNow">Go Now</div>
              <div className="top-panel__menu-button">
                  <img src="./images/menu.svg" className="menu"/>
                  <div class="dropdown-content">
-                     <p onClick={() => route('/')}>Home</p>
+                     <p onClick={() => router('/')}>Home</p>
                      <p>Create tasks</p>
-                     <p onClick={() => route('/business')}>For Business</p>
+                     <p onClick={() => router('/business')}>For Business</p>
                  </div>
              </div>
          </div>
@@ -95,15 +101,15 @@ function Business(){
 
                             <div className="signup-form__info__inputs__lname">
                                 <InputWithPlaceholder 
-                                name= 'is_whatsapp'
+                                name= 'name'
                                 type='text'
                                 h5='Last Name'
-                                value= {values.is_whatsapp}
+                                value= {values.name}
                                 onChange= {handleInput}
                                 placeholder='Joe'
                                 // pattern= '^[a-zA-Z]{3,}$'
                                 />
-                                {errors.is_whatsapp && <span className='error'>{errors.is_whatsapp}</span> }
+                                {errors.is_whatsapp && <span className='error'>{errors.name}</span> }
                             </div>
                            
                            <div className="signup-form__info__inputs__email">
@@ -142,6 +148,16 @@ function Business(){
                                 />
                                   {errors.phone && <span className='error' >{errors.phone}</span> }
                            </div>
+                        </div>
+                        <div className="signup-form__info__inputs__check">
+                            <input
+                                type="checkbox"
+                                className="signup-form__info__inputs__check__box"
+                                checked={isWhatsAppNumber}
+                                value={values.is_whatsapp}
+                                onChange={handleCheckboxChange}
+                            />
+                            <label>This is my whatsapp Number </label>
                         </div>
                         <button onClick={() => {!errors ? type="submit" : errors}}  className="signup-form__info__button">Go Now</button>
                     </form>
