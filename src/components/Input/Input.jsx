@@ -10,7 +10,7 @@ function Input(props){
                 placeholder={props.placeholder} 
                 pattern={props.pattern}
                 className= {props.className}>{props.text}
-                </input>
+        </input>
     );
 }
 export default Input;

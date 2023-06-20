@@ -1,6 +1,7 @@
 import React from "react";
 import Inputtwo from "../components/Input/Inputtwo";
 import { useNavigate } from "react-router";
+import Footer from "../components/footer";
 /*import Header from "../components/Header/Header";*/
 
 function Homepage(){
@@ -9,24 +10,25 @@ function Homepage(){
 
     return(
         <div className="Home-page">
+          <div className="Home-page__container">
             {/*<Header/>*/}
             <div className="top">
-            <p className="top__logo">GoNow</p>
-            <div className="top__navbar">
-                <p className="top__navbar__link" onClick={() => route('/')}>Home</p>
-                <p className="top__navbar__linktwo">Create tasks</p>
-                <p className="top__navbar__linkthree" onClick={() => route('/business')}>For Business</p>
-            </div>
-            <div className="top__GoNow">Go Now</div>
-            <div className="top-panel__menu-button">
-                <img src="./images/menu.svg" className="menu"/>
-                <div class="dropdown-content">
-                    <p className="dropdown-content__one" onClick={() => route('/')}>Home</p>
-                    <p className="dropdown-content__two">Create tasks</p>
-                    <p className="dropdown-content__three" onClick={() => route('/business')}>For Business</p>
+                <p className="top__logo">GoNow</p>
+                <div className="top__navbar">
+                    <p className="top__navbar__link" onClick={() => route('/')}>Home</p>
+                    <p className="top__navbar__linktwo">Create tasks</p>
+                    <p className="top__navbar__linkthree" onClick={() => route('/business')}>For Business</p>
                 </div>
-            </div>
-        </div>
+                <div className="top__GoNow">GoNow</div>
+                <div className="top-panel__menu-button">
+                    <img src="./images/menu.svg" className="menu"/>
+                    <div class="dropdown-content">
+                        <p className="dropdown-content__one" onClick={() => route('/')}>Home</p>
+                        <p className="dropdown-content__two">Create tasks</p>
+                        <p className="dropdown-content__three" onClick={() => route('/business')}>For Business</p>
+                    </div>
+                </div>
+            </div> 
             
             <div className="description">
                     <img src="./images/hero-image-mobile.png" className="image-mobile"/>
@@ -35,29 +37,31 @@ function Homepage(){
                         <p className="description__info__two">Learn industry required skills, earn money while doing so and get connected to your future employer.</p>
                     </div>
                     <img src="./images/hero-image.png" className="image"/>
-            </div>
+            </div> 
+
             <div className="get-started">
                 <img src="./images/getstarted-mobile.png" className="get-started__image__two"/>
                 <img src='./images/getstarted.png' className="get-started__image"/>
                 <div className="get-started__text">
                     <p className="get-started__text__step">Get started in 3 easy steps</p>
                     <div className="get-started__text__steps">
-                        <div>
+                        <div className="get-started__text__steps__content1">
                             <img src ="./images/youtube.svg" className="get-started__text__steps__images1"/>
                             <p className="get-started__text__steps__one">Watch online learning videos.</p>
                         </div>
-                        <div>
+                        <div className="get-started__text__steps__content">
                             <img src="./images/clipboard-list.svg" className="get-started__text__steps__images2"/>
                             <p className="get-started__text__steps__two">Get assigned to tasks and earn money.</p>
                         </div>
-                        <div>
+                        <div  className="get-started__text__steps__content">
                             <img src="./images/rocket.svg" className="get-started__text__steps__images3"/>
                             <p className="get-started__text__steps__three">Get access to interview coaching for your career.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="form">
+            </div> 
+           
+             <div className="form">
                 <img src="./images/Group-mobile.png" className="form__images__two"/>
                 <img src="./images/Group.png" className="form__images"/>
                 <div className="form__info">
@@ -77,7 +81,9 @@ function Homepage(){
                         <div className="form__info__details__button">Sign up</div>
                     </form>
                 </div>
-            </div>
+            </div> 
+            <Footer />
+{/*             
             <div className="footer">
                 <div className="footer__top">
                     <div className="footer__top__about">
@@ -106,10 +112,10 @@ function Homepage(){
                                 <p>0810 0000 000</p>
                             </div>
                         </div>
-                        <div className="footer__top__options-three_socials">
-                            <p className="footer__top__options-three_socials__text">Follow us</p>
-                            <div className="footer__top__options-three_socials__handles">
-                                <div className="footer__top__options-three_socials__handles__main">
+                        <div className="footer__top__options-three__socials">
+                            <p className="footer__top__options-three__socials__text">Follow us</p>
+                            <div className="footer__top__options-three__socials__handles">
+                                <div className="footer__top__options-three__socials__handles__main">
                                     <img className="footer__top__options-three__socials__handles__main__icons" src="./images/facedbook.svg"/>
                                     <img className="footer__top__options-three__socials__handles__main__icons" src="./images/instagram.svg"/>
                                     <img className="footer__top__options-three__socials__handles__main__icons" src="./images/linkedin.svg"/>
@@ -126,6 +132,7 @@ function Homepage(){
                     </div>
                 </div>
                 <p className="copyright">Copyright © {date.getFullYear()} gonow</p>
+            </div>  */}
             </div>
         </div>
     )

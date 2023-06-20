@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import Input from "../components/Input/Input";
+import InputWithPlaceholder from "../components/inputWithPlaceholder";
+import Validation from "../components/validation";
 import { useNavigate } from "react-router";
 import Api from "../api/api";
+import CountryInput from "../components/countryInput";
+import Footer from "../components/footer";
 /*import Header from "../components/Header/Header";*/
 
 function Business(){
@@ -11,12 +15,13 @@ function Business(){
         email: "",
         is_whatsapp: ""
     })
-    const date = new Date();
     const url = 'https://api-staging.liveable.ng/go/landing';
-    const route = useNavigate();
+    const router = useNavigate();
+    const [errors, setErrors] = useState({})
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setErrors(Validation(values));
         Api.post(url, {
           name: values.name,
           phone: values.phone,
@@ -25,9 +30,16 @@ function Business(){
         } )
         .then((response) => {console.log(response.data)} )
         .catch(err => console.log(err));
+        if(values.name && values.is_whatsapp && values.email && values.phone){
+            router('/')
+        } else if(!values.name && !values.is_whatsapp && !values.email && !values.phone){
+            errors
+        } else{
+            router('/')
+        }
     };
 
-    const handleChange = (e) => {
+    const handleInput = (e) => {
         const newData = {...values}
         newData[e.target.name] = e.target.value;
         setValues(newData)
@@ -35,62 +47,109 @@ function Business(){
 
     return(
         <div className="Business-page">
+          <div className="Business-page__container">
             {/*<Header/>*/}
 
-            <div className="top">
-            <p className="top__logo">GoNow</p>
-            <div className="top__navbar">
-                <p className="top__navbar__link" onClick={() => route('/')}>Home</p>
-                <p className="top__navbar__linktwo">Create tasks</p>
-                <p className="top__navbar__linkthree" onClick={() => route('/business')}>For Business</p>
-            </div>
-            <div className="top__GoNow">Go Now</div>
-            <div className="top-panel__menu-button">
-                <img src="./images/menu.svg" className="menu"/>
-                <div class="dropdown-content">
-                    <p onClick={() => route('/')}>Home</p>
-                    <p>Create tasks</p>
-                    <p onClick={() => route('/business')}>For Business</p>
-                </div>
-            </div>
-        </div>
+          <div className="top">
+             <p className="top__logo">GoNow</p>
+             <div className="top__navbar">
+                 <p className="top__navbar__link" onClick={() => route('/')}>Home</p>
+                 <p className="top__navbar__linktwo">Create tasks</p>
+                 <p className="top__navbar__linkthree" onClick={() => route('/business')}>For Business</p>
+             </div>
+             <div className="top__GoNow">Go Now</div>
+             <div className="top-panel__menu-button">
+                 <img src="./images/menu.svg" className="menu"/>
+                 <div class="dropdown-content">
+                     <p onClick={() => route('/')}>Home</p>
+                     <p>Create tasks</p>
+                     <p onClick={() => route('/business')}>For Business</p>
+                 </div>
+             </div>
+         </div>
 
-           <div className="page-description">
+         <div className="page-description">
                 <img src="./images/business-mobile.png" className="page-description__image-mobile"/>
                 <div className="page-description__info">
                     <p className="page-description__info__one">Outsource your simple but time-consuming tasks</p>
                     <p className="page-description__info__two">Get them done in record time, at great rates and increase your social impact while at it</p>
                 </div>
                 <img src="./images/business.png" className="page-description__image"/>
-            </div>
+            </div> 
             <div className="signup-form">
                 <p className="signup-form__header">Sign up to create a task</p>
                 <div className="signup-form__info">
-                    <form onSubmit={(e) => handleSubmit(e)}>
-                        <Input className='signup-form__info__first-name' placeholder ="First Name" values={values.name} type="text"
-                        name='name'
-                        onChange={(e) => handleChange(e)}
-                        />
-                        <Input className='signup-form__info__last-name' placeholder ="Last Name" type="text"
-                        values={values.phone}
-                        name='phone'
-                        onChange={(e) => handleChange(e)}
-                        />
-                        <Input className='signup-form__info__email' placeholder ="Email Address" type="email"
-                        values={values.email}
-                        name='email'
-                        onChange={(e) => handleChange(e)}
-                        /> 
-                        <Input className='signup-form__info__whatsapp-number' placeholder ="Whatsapp Number" type="text"
-                        values={values.is_whatsapp}
-                        name='is_whatsapp'
-                        onChange={(e) => handleChange(e)}
-                        />
-                        <button type="submit" className="signup-form__info__button">Go Now</button>
+                    <form onSubmit={handleSubmit}>
+                    <div className="signup-form__info__inputs">
+                            <div className="signup-form__info__inputs__fname">
+                                <InputWithPlaceholder 
+                                name= 'name'
+                                type='text'
+                                h5='First Name'
+                                onChange= {handleInput}
+                                placeholder='Emmanuel'
+                                value= {values.name}
+                                />
+                                {errors.name && <span className='error' >{errors.name}</span> }
+                            </div>
+
+                            <div className="signup-form__info__inputs__lname">
+                                <InputWithPlaceholder 
+                                name= 'is_whatsapp'
+                                type='text'
+                                h5='Last Name'
+                                value= {values.is_whatsapp}
+                                onChange= {handleInput}
+                                placeholder='Joe'
+                                // pattern= '^[a-zA-Z]{3,}$'
+                                />
+                                {errors.is_whatsapp && <span className='error'>{errors.is_whatsapp}</span> }
+                            </div>
+                           
+                           <div className="signup-form__info__inputs__email">
+                            <InputWithPlaceholder
+                                // pattern= '/^(?![.-])((?![_.-][_.-])[a-zA-Z\d.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}$/'
+                                name= 'email'
+                                type= 'email'
+                                placeholder= 'johndoe@mail.com'
+                                onChange= {handleInput}
+                                value= {values.email}
+                                h5='Email'
+                                />
+                                {errors.email && <span className='error' >{errors.email}</span> }
+                           </div>
+                           
+                           {/* <div className="signup-form__info__inputs__phone">
+                            <InputWithPlaceholder 
+                                // pattern= '^\d{11}$'
+                                name= 'phone'
+                                type= 'tel'
+                                h5= 'Whatsapp Number'
+                                onChange= {handleInput}
+                                placeholder ='90100000000'
+                                value= {values.whatsappNum}
+                                />
+                                {errors.phone && <span className="error" >{errors.phone}</span> }
+                           </div> */}
+                           <div className="signup-form__info__inputs__phone">
+                                <CountryInput 
+                                        name= 'phone'
+                                        h5= 'Whatsapp Number'
+                                        onChange= {handleInput}
+                                        placeholder ='90100000000'
+                                        type='tel'
+                                        value= {values.phone}  
+                                />
+                                  {errors.phone && <span className='error' >{errors.phone}</span> }
+                           </div>
+                        </div>
+                        <button onClick={() => {!errors ? type="submit" : errors}}  className="signup-form__info__button">Go Now</button>
                     </form>
                 </div>
             </div>
-            <div className="footer">
+            <Footer /> 
+
+              {/* <div className="footer">
                 <div className="footer__top">
                     <div className="footer__top__about">
                         <p className="footer__top__about__logo">GoNow</p>
@@ -134,6 +193,7 @@ function Business(){
                     </div>
                 </div>
                 <p className="copyright">Copyright © {date.getFullYear()} gonow</p>
+            </div>  */}
             </div>
         </div>
     )

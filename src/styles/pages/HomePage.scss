@@ -2,19 +2,39 @@
 .Home-page{
     width: 100%;
     margin: auto;
+    &__container{
+        margin: 0 auto;
+        max-width: 120rem;
+        @media (max-width: 1024px){
+            padding: 0 3rem;
+        }
+        @media (max-width: 600px){
+            padding: unset;
+        }
+    }
 
     .top{
         width: 100%;
         margin: 0 auto;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-    
+        align-items: center;
+        margin-top: 3.313rem;
+        justify-content: space-between;
+        padding-left: 6.366rem;
+        padding-right: 6.287rem;
+        @media (max-width: 1024px){
+            padding-left: 2.366rem;
+            padding-right: 2.287rem;
+        }
+        @media (max-width: 768px){
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
         @media(max-width: 490px){
             justify-content: space-between;
             align-items: center;
-            padding: 1rem;
-            margin-bottom: 1.861rem;
+            margin-top: unset;
             padding-top: 4.5rem;
         }
     
@@ -25,7 +45,9 @@
             color: #1E1E1E;
             font-size: 2.3rem;
             text-align: center;
-    
+            @media (max-width: 768px){
+                font-size: 2rem;
+            }
             @media(max-width: 490px){
                 font-size: 2.1rem;
             }
@@ -38,14 +60,8 @@
             font-size: 1rem;
             display: flex;
             gap: 3rem;
-            margin-bottom: 6.063rem;
-            margin-top: 4.6rem;
             text-align: center;
-    
-            @media (max-width: 550px){
-                gap: 2rem;
-            }
-            @media (max-width: 530px){
+            @media (max-width: 768px){
                 gap: 1rem;
             }
     
@@ -53,7 +69,7 @@
                 font-size: 0.8rem;
             }
     
-            @media(max-width: 490px){
+            @media(max-width: 545px){
                 display: none;
             }
 
@@ -75,29 +91,31 @@
             background-color: #1E1E1E;
             color:#FFFFFF;
             border-radius: 5px;
-            margin-bottom: 4.938rem;
-            margin-top: 3.313rem;
             padding: 1.094rem 4.063rem;   
     
-            @media(max-width: 740px){
-                padding: 1.094rem 3rem;
+            @media (max-width: 768px){
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #1E1E1E;
+                color:#FFFFFF;
+                max-width: 4rem;
+                height: 3rem;
+                font-size: 1rem;
             }
     
-            @media(max-width: 620px){
-                padding: 1.094rem 1rem;
-            }
-    
-            @media(max-width: 490px){
+            @media(max-width: 545px){
                 display: none;
             }
             
         }
     
         .top-panel__menu-button {
-            position: relative;
-            display: inline-block;
+            @media (max-width: 545px){
+                display: inline-block;
+            }
     
-            @media(min-width: 490px){
+            @media(min-width: 545px){
                 display: none;
             }
         }
@@ -137,9 +155,6 @@
         .menu{
             width: 24px;
             height: 24px;
-            @media(min-width: 490px){
-                display: none;
-            }
         }
     }
 
@@ -148,22 +163,30 @@
         width: 100%;
         margin: auto;
         display: flex;
-        justify-content: center;
-        gap: 3rem;
-
-        
-        @media(max-width: 1220px){
-            gap: 2rem;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 5.5rem;
+        margin-bottom: 11.25rem;
+        padding-left: 6.375rem;
+        padding-right: 6.404rem;
+        @media (max-width: 1500px){
+            padding-left: 3.375rem;
+            padding-right: 3.375rem;
         }
-
-        @media(max-width: 960px){
-            gap: 1rem;
+        @media (max-width: 1400px){
+            padding-left: 6.375rem;
+            padding-right: 6.404rem;
         }
-
-        @media(max-width: 920px){
-            gap: 0rem;
+        @media (max-width: 1140px){
+            padding-left: 3.375rem;
+            padding-right: 3.375rem;
         }
-
+        @media (max-width: 900px){
+            padding: 0 2rem;
+        }
+        @media (max-width: 600px){
+            padding: 0 1rem;
+        }
         @media(max-width: 621px){
             width: 100%;
             margin: auto;
@@ -179,13 +202,15 @@
         .image-mobile{
             width: 21.654rem;
             height: 232px;
-            margin-bottom: 1rem;
+            margin-bottom: 0.771rem;
+            margin-top: 1.861rem;
             @media(min-width: 621px){
                 display: none;
             }
             @media(max-width: 390px){
                 max-width: 22.375rem;
                 height: 13.923rem;
+                width: 100%;
             }
         }
 
@@ -195,54 +220,44 @@
                 flex-direction: column;
                 width: 100%;
                 justify-content: center;
-                padding: 0 1rem;
             }
 
             &__one{
                 color: #212127;
                 font-weight: 400;
                 font-size: 4.375rem;
-                max-width: 25rem;
                 margin-bottom: 1.563rem;
-                margin-top: 10.625rem;
-                @media(max-width: 1030px){
-                    margin-top: 6rem;
+                font-family: 'Stardom';
+                line-height: 5.063rem;
+                max-width: 28.313rem;
+                @media (max-width: 1300px){
+                    font-size: 3.375rem;
+                    max-width: 30rem;
+                    line-height: 4.375rem;
                 }
-
                 @media(max-width: 960px){
-                    font-size: 3.6rem;
-                }
-
-                @media(max-width: 900px){
-                    font-size: 3rem;
-                    max-width: 22rem;
-                }
-
-                @media(max-width: 760px){
+                    font-size: 2rem;
+                    line-height: 3rem;
                     max-width: 20rem;
-                    margin-top: 4.5rem;
-                    margin-bottom: 1.2rem;
                 }
-
-                @media(max-width: 720px){
-                    max-width: 18rem;
-                }
-
-                @media(max-width: 680px){
-                    margin-bottom: 1rem;
-                    font-size: 2.5rem;
-                    max-width: 16rem;
-                }
-
-                @media(max-width: 650px){
-                    max-width: 14.5rem;
-                    margin-top: 0rem;
+                @media(max-width: 732px){
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    line-height: 2rem;
+                    max-width: 15rem;
+                    font-weight: 600;
                 }
 
                 @media(max-width: 620px){
-                    max-width: 20.375rem;
+                    font-weight: unset;
+                    font-family: 'Stardom';
+                    font-weight: 400;
                     font-size: 2.5rem;
-                    margin-top: 0rem;
+                    line-height: 3.188rem;
+                    margin-bottom: 0.938rem;
+                    letter-spacing: -0.03em;
+                    max-width: 22.375rem;
+                    color: #212127;
                 }
 
                 @media(max-width: 390px){
@@ -265,26 +280,24 @@
                 font-family: 'Lexend', sans-serif;
                 font-weight: 400;
                 font-size: 1.25rem;
+                max-width: 26.188rem;
                 color: #3F464A;
-                max-width: 24rem;
-
-                @media(max-width: 900px){
-                    font-size: 0.9rem;
-                    max-width: 20rem;
+                line-height: 1.875rem;
+                @media (max-width: 1300px){
+                    max-width: 20.188rem;
                 }
-
-                @media(max-width: 760px){
-                    width: 18rem;
+                @media (max-width: 960px){
+                    max-width: 19.188rem;
+                    font-size: 1rem;
                 }
-
-                @media(max-width: 720px){
-                    width: 16rem;
+                @media (max-width: 732px){
+                    max-width: 15.188rem;
                 }
-
-                @media(max-width: 680px){
-                    max-width: 14rem;
+                @media (max-width: 700px){
+                    line-height: 1.3rem;
+                    max-width: 12.188rem;
+                    font-size: 0.8rem;
                 }
-                
                 @media(max-width: 620px){
                     font-family: 'Lexend';
                     font-style: normal;
@@ -301,15 +314,8 @@
         }
 
         .image{
-            margin-bottom: 12.313rem;
-            margin-top: 5.5rem;
-
-            @media(max-width: 1330px){
-                width: 49rem;
-            }
-
-            @media(max-width: 1270px){
-                width: 46rem;
+            @media(max-width: 1400px){
+                max-width: 60%;
             }
 
             @media(max-width: 1200px){
@@ -334,8 +340,6 @@
 
             @media(max-width: 650px){
                 width: 20rem;
-                margin-bottom: 10rem;
-                margin-top: -1rem;
             }
 
             @media(max-width: 620px){
@@ -346,11 +350,26 @@
 
     .get-started{
         display: flex;
-        flex-direction: row;
-        justify-content: center;
         gap: 5.563rem;
         background-color: #1E1E1E;
+        justify-content: space-between;
+        padding-right: 11.313rem;
         color: #FFFFFF;
+        @media (max-width: 1400px){
+            padding-right: 7.313rem;
+        }
+        @media (max-width: 1300px){
+            padding-right: 3.313rem;
+        }
+        @media (max-width: 1000px){
+            gap: 2.563rem;
+        }
+        @media (max-width: 860px){
+            padding-bottom: 3.125rem;
+        }
+        @media (max-width: 800px){
+            padding-right: 1.313rem;
+        }
 
         @media(max-width: 621px){
             width: 100%;
@@ -359,17 +378,9 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 0rem;
+            padding-right: 0;
+            gap: 0;
         }
-
-        @media(max-width: 1180px){
-            gap: 4rem;
-        }
-
-        @media(max-width: 780px){
-            gap: 3rem;
-        }
-
         @media(max-width: 570px){
             gap: 2rem;
         }
@@ -386,44 +397,44 @@
             margin-top: -5rem;
             padding-bottom: 3.3875rem;
             padding-left: 9.25rem;
-
-            @media(max-width: 1180px){
-                padding-left: 7.5rem;
-            }
-
-            @media(max-width: 1020px){
-                padding-left: 5rem;
+            @media (max-width: 1300px){
+                padding-left: 4.25rem;
             }
 
             @media(max-width: 1000px){
-                width: 300px;
-                height: 500px;
+                // width: 300px;
+                // height: 500px;
+                max-width: 31.25rem;
                 padding-left: 3rem;
             }
-
-            @media(max-width: 900px){
-                width: 280px;
-                height: 480px;
+            @media (max-width: 800px){
+                padding-bottom: 1rem;
+                padding-left: 1rem;
             }
 
-            @media(max-width: 760px){
-                width: 270px;
-                height: 480px;
-                margin-top: -3rem;
-            }
+            // @media(max-width: 900px){
+            //     width: 280px;
+            //     height: 480px;
+            // }
 
-            @media(max-width: 650px){
-                padding-left: 2rem;
-            }
+            // @media(max-width: 760px){
+            //     width: 270px;
+            //     height: 480px;
+            //     margin-top: -3rem;
+            // }
+
+            // @media(max-width: 650px){
+            //     padding-left: 2rem;
+            // }
 
             @media(max-width: 620px){
                 display: none;
             }
 
             &__two{
-                width: 21.654rem;
                 margin-bottom: 0rem;
                 margin-top: -2.9rem;
+                margin-bottom: 2.125rem;
 
                 @media(min-width: 621px){
                     display: none;
@@ -436,6 +447,11 @@
         }
 
         &__text{
+            width: 100%;
+            @media (max-width: 620px){
+                margin: 0 auto;
+                width: unset;
+            }
             &__step{
                 @import url('https://api.fontshare.com/v2/css?f[]=stardom@400&display=swap');
                 font-family: 'Stardom';
@@ -444,17 +460,16 @@
                 margin-top: 4.438rem;
                 line-height: 61px;
                 max-width: 20.375rem;
-
-                @media(max-width: 645px){
-                    font-size: 2.8rem;
+                @media (max-width: 860px){
+                    font-size: 1.5rem;
+                    line-height: 2rem;
+                    margin-top: 1.438rem;
                 }
-
                 @media(max-width: 620px){
                     font-size: 2.5rem;
                     margin-top: 0.8rem;
                     line-height: 47px;
                 }
-
                 &__one{
                     max-width: 22rem;
 
@@ -484,28 +499,76 @@
                 font-family: 'Lexend', sans-serif;
                 font-size: 1.25rem;
                 font-weight: 400;
+                justify-content: space-between;
                 color: #A5B0B6;
                 margin-top: 1.511rem;
-                gap: 5.375rem;
+                @media (max-width: 1132px){
+                    justify-content: unset;
+                    gap: 1rem;
+                }
+                @media (max-width: 860px){
+                    flex-direction: column;
+                }
+                &__content{
+                    max-width: 12.5rem;
+                    @media (max-width: 1000px){
+                        max-width: 10rem;
+                    }
+                    @media (max-width: 1000px){
+                        max-width: 12.5rem;
+                    }
+                    @media (max-width: 500px){
+                        max-width: fit-content;
+                    }
+                }
+                &__content1{
+                    max-width: 12.5rem;
+                    @media (max-width: 1132px){
+                        max-width: 10.5rem;
+                    }
+                    @media (max-width: 1000px){
+                        max-width: 12rem;
+                    }
+                    @media (max-width: 800px){
+                        max-width: 100%;
+                    }
+                    @media (max-width: 500px){
+                        max-width: fit-content;
+                    }
+                }
+                &__images1{
+                    margin-bottom: 1.438rem;
+                    @media (max-width: 800px){
+                        margin-bottom: 0.5rem;
+                    }
+                }
+                &__images2{
+                    margin-bottom: 1.438rem;
+                    @media (max-width: 800px){
+                        margin-bottom: 0.5rem;
+                    }
+                }
+                &__images3{
+                    margin-bottom: 1.438rem;
+                    @media (max-width: 800px){
+                        margin-bottom: 0.5rem;
+                    }
+                }
 
                 @media(max-width: 620px){
                     display: flex;
                     flex-direction: column;
                     font-size: 1.25rem;
-                    gap:0rem;
-                }
-
-                @media(max-width: 1220px){
-                    gap: 4rem;
-                }
-
-                @media(max-width: 850px){
-                    gap: 2.875rem;
-                    font-size: 0.9rem;
+                    gap:1rem;
                 }
 
                 &__one{
                     font-family: 'Lexend';
+                    line-height: 1.875rem;
+                    @media (max-width: 1180px){
+                        font-size: 1rem;
+                        line-height: 1.375rem;
+                    }
                     @media (max-width: 390px){
                         font-weight: 400;
                         font-size: 1.25rem;
@@ -514,6 +577,11 @@
                 }
                 &__two{
                     font-family: 'Lexend';
+                    line-height: 1.875rem;
+                    @media (max-width: 1180px){
+                        font-size: 1rem;
+                        line-height: 1.375rem;
+                    }
                     @media (max-width: 390px){
                         font-weight: 400;
                         font-size: 1.25rem;
@@ -526,8 +594,15 @@
                 }
                 &__three{
                     font-family: 'Lexend';
-                    @media (max-width: 390px){
+                    line-height: 1.875rem;
+                    @media (max-width: 1180px){
+                        font-size: 1rem;
+                        line-height: 1.375rem;
+                    }
+                    @media (max-width: 500px){
                         margin-bottom: 5.5rem;
+                    }
+                    @media (max-width: 390px){
                         font-weight: 400;
                         font-size: 1.25rem;
                         line-height: 1.875rem;
@@ -554,31 +629,30 @@
     }
     .form{
         width: 100%;
-        margin: 0 auto;
+        /* margin: 0 auto; */
         background-color: #0B88DF;
         color: #FFFFFF;
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        gap: 9.813rem;
-
-        @media(max-width: 1130px){
-            gap: 8rem;
+        /* justify-content: center; */
+        padding-left: 9.25rem;
+        padding-right: 11.375rem;
+        /* gap: 9.813rem; */
+        justify-content: space-between;
+        @media (max-width: 1440px){
+            padding-left: 5.25rem;
+            padding-right: 6.375rem;
         }
-
-        @media(max-width: 1100px){
-            gap: 7rem;
+        @media (max-width: 1300px){
+            padding-left: 2.5rem;
+            padding-right: 3.375rem;
         }
-
-        @media(max-width: 950px){
-            gap: 5rem;
+        @media(max-width: 900px){
+            padding-left: 1rem;
+            padding-right: 1rem;
+            gap: 2rem;
         }
-
-        @media(max-width: 800px){
-            gap: 3.5rem;
-        }
-
-        @media(max-width: 620px){
+        @media(max-width: 768px){
             width: 100%;
             margin: 0 auto;
             display: flex;
@@ -592,15 +666,13 @@
         &__images{
             margin-top: 3rem;
             margin-bottom: 3rem;
-
-            @media(max-width: 1100px){
-                max-width: 500px;
+            @media (max-width: 1200px){
+                max-width: 31.25rem;
             }
-
-            @media(max-width: 1020px){
-                max-width: 450px;
+            @media (max-width: 956px){
+                max-width: 25rem;
+                height: 37.5rem;
             }
-
             @media(max-width: 860px){
                 max-width: 390px;
             }
@@ -608,21 +680,19 @@
             @media(max-width: 775px){
                 max-width: 340px;
             }
-            @media(max-width: 720px){
-                max-width: 300px;
-            }
-
-            @media(max-width: 620px){
+            @media(max-width: 768px){
                 display: none;
             }
 
-            &__two{
-                max-width: 20.5rem;
-                margin-top: 2.75rem;
-                margin-bottom: 2.125rem;
 
-                @media(min-width: 621px){
-                    display: none;
+            &__two{
+                display: none;
+                @media (max-width: 768px){
+                    display: block;
+                    max-width: 20.5rem;
+                    margin: auto;
+                    margin-top: 2.75rem;
+                    margin-bottom: 2.125rem;
                 }
 
                 @media(max-width: 360px){
@@ -633,19 +703,33 @@
         }
 
         &__info{
-            
+            @media (max-width: 768px){
+                max-width: 22.3rem;
+                margin: auto;
+            }
             &__big{
                 margin-top: 3.125rem;
                 font-weight: 400;
                 font-size: 4.375rem;
                 margin-bottom: 0.625rem;
-
-                @media(max-width: 1055px){
-                    font-size: 4rem;
+                line-height: 5.063rem;
+                letter-spacing: -0.03em;
+                font-family: 'Stardom';
+                @media(max-width: 1300px){
+                    font-size: 3rem;
                 }
 
                 @media(max-width: 960px){
+                    font-size: 2.2rem;
+                }
+                @media (max-width: 768px){
                     font-size: 3.2rem;
+                    font-family: "Stardom";
+                    margin-bottom: 1.25rem;
+                    line-height: 3.25rem;
+                    letter-spacing: -0.03em;
+                    margin-top: 0;
+                    font-size: 2.5rem;
                 }
 
                 @media(max-width: 645px){
@@ -672,7 +756,7 @@
                     font-size: 0.9rem;
                 }
 
-                @media(max-width: 645px){
+                @media(max-width: 768px){
                     font-size: 1.25rem;
                 }
 
@@ -712,7 +796,7 @@
                         padding: 1rem 1rem;
                     }
 
-                    @media(max-width: 620px){
+                    @media(max-width: 768px){
                         max-width: 22.3rem;
                         text-align: center;
                     }
@@ -745,7 +829,7 @@
                         max-width: 20rem;
                     }
 
-                    @media(max-width: 685px){
+                    @media(max-width: 768px){
                         max-width: 22.3rem;
                     }
 
@@ -826,7 +910,7 @@
                         max-width: 20rem;
                     }
 
-                    @media(max-width: 685px){
+                    @media(max-width: 768px){
                         max-width: 22.3rem;
                     }
 
@@ -838,331 +922,342 @@
         }
     }
 
-    .footer{
-        width: 100%;
-        margin: 0 auto;
-        padding-top: 5.438rem;
-        padding-bottom: 5rem;
-        padding-right: 1.125rem;
-        padding-left: 1rem;
-        margin: auto;
-        @media (max-width: 390px){
-            padding-bottom: 0;
-        }
-        &__top{
-            /*width: 100%;
-            margin: 0 auto;*/
-            display: flex;
-            justify-content: space-around;
-            /*flex-direction: row;
-            justify-content: space-around;
-            /*gap: 10.438rem;
-            justify-content: center;*/
+    // .footer{
+    //     width: 100%;
+    //     margin: 0 auto;
+    //     padding-top: 5.438rem;
+    //     padding-bottom: 5rem;
+    //     margin: auto;
+    //     @media (max-width: 390px){
+    //         padding-bottom: 0;
+    //     }
+    //     &__top{
+    //         /*width: 100%;
+    //         margin: 0 auto;*/
+    //         display: flex;
+    //         justify-content: space-between;
+    //         padding: 0 6.25rem;
+    //         /*flex-direction: row;
+    //         justify-content: space-around;
+    //         /*gap: 10.438rem;
+    //         justify-content: center;*/
+    //         @media (max-width: 1124px){
+    //             padding: 0 2.25rem;
+    //         } 
+    //         @media(max-width: 832px){
+    //             flex-direction: column;
+    //             padding: 0 1rem;
+    //         } 
+    //         &__about{
+    //             &__logo{
+    //                 @import url("https://api.fontshare.com/v2/css?f[]=stardom@400&display=swap");
+    //                 font-family: 'Stardom', sans-serif;
+    //                 color: #1E1E1E;
+    //                 font-size: 2.3rem;
 
-            @media(max-width: 620px){
-                flex-direction: column;
-                max-width: 22rem;
-            } 
+    //                 @media(max-width: 700px){
+    //                     font-size: 2rem;
+    //                 }
 
+    //                 @media(max-width: 580px){
+    //                     font-size: 1.8rem;
+    //                 } 
+    //             }
 
-            &__about{
+    //             &__description{
+    //                 margin-top: 1.238rem;
+    //                 max-width: 22.313rem;
+    //                 color: #3F464A;
+    //                 @import url('https://fonts.googleapis.com/css?family=Lexend');
+    //                 font-family: 'Lexend', sans-serif;
+    //                 font-weight: 400;
+    //                 font-size: 1rem;
+    //                 line-height: 1.438rem;
 
-                &__logo{
-                    @import url("https://api.fontshare.com/v2/css?f[]=stardom@400&display=swap");
-                    font-family: 'Stardom', sans-serif;
-                    color: #1E1E1E;
-                    font-size: 2.3rem;
+    //                 @media(max-width: 890px){
+    //                     max-width: 18rem;
+    //                 }
 
-                    @media(max-width: 700px){
-                        font-size: 2rem;
-                    }
+    //                 @media(max-width: 700px){
+    //                     max-width: 15rem;
+    //                     margin-top: 0.9rem;
+    //                     font-size: 0.8rem;
+    //                 }
 
-                    @media(max-width: 580px){
-                        font-size: 1.8rem;
-                    } 
+    //                 @media(max-width: 832px){
+    //                     font-size: 1rem;
+    //                     max-width: 22.25rem;
+    //                     margin-bottom: 3.75rem;
+    //                 }
 
-                }
+    //                 @media(max-width: 390px){
+    //                     font-family: 'Lexend';
+    //                     font-style: normal;
+    //                     font-weight: 400;
+    //                     font-size: 1rem;
+    //                     line-height: 1.438rem;
+    //                     letter-spacing: -0.03em;
+    //                     max-width: unset;
+    //                     color: #3F464A;
+    //                 } 
 
-                &__description{
-                    margin-top: 1.238rem;
-                    max-width: 22.313rem;
-                    color: #3F464A;
-                    @import url('https://fonts.googleapis.com/css?family=Lexend');
-                    font-family: 'Lexend', sans-serif;
-                    font-weight: 400;
-                    font-size: 1rem;
-                    line-height: 1.438rem;
+    //             }
+    //         }
 
-                    @media(max-width: 890px){
-                        max-width: 18rem;
-                    }
-
-                    @media(max-width: 700px){
-                        max-width: 15rem;
-                        margin-top: 0.9rem;
-                        font-size: 0.8rem;
-                    }
-
-                    @media(max-width: 620px){
-                        font-size: 1rem;
-                        max-width: 21rem;
-                        margin-bottom: 3.75rem;
-                    }
-
-                    @media(max-width: 390px){
-                        font-family: 'Lexend';
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 1rem;
-                        line-height: 1.438rem;
-                        letter-spacing: -0.03em;
-                        max-width: unset;
-                        color: #3F464A;
-                    } 
-
-                }
-            }
-
-            &__options-one{
-                color: #3F464A;
-                @import url('https://fonts.googleapis.com/css?family=Lexend');
-                font-family: 'Lexend', sans-serif;
-                font-weight: 400;
-                font-size: 1.188rem;
-                line-height: 3.125rem;
+    //         &__options-one{
+    //             color: #3F464A;
+    //             @import url('https://fonts.googleapis.com/css?family=Lexend');
+    //             font-family: 'Lexend', sans-serif;
+    //             font-weight: 400;
+    //             font-size: 1.188rem;
+    //             line-height: 3.125rem;
                 
-                p{
-                    font-family: 'Lexend';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 1.25rem;
-                    letter-spacing: -0.03em;
-                    color: #3F464A;
-                }
+    //             p{
+    //                 font-family: 'Lexend';
+    //                 font-style: normal;
+    //                 font-weight: 400;
+    //                 font-size: 1.188rem;
+    //                 letter-spacing: -0.03em;
+    //                 color: #3F464A;
+    //                 @media (max-width: 1000px){
+    //                     font-size: 1rem;
+    //                 }
+    //             }
 
-                @media(max-width: 810px){
-                    font-size: 0.9rem;
-                } 
+    //             @media(max-width: 810px){
+    //                 font-size: 0.9rem;
+    //             } 
 
-                @media(max-width: 620px){
-                    font-size: 1.25rem;
-                    align-items: flex-start;
-                } 
-                @media (max-width: 425px){
-                    display: flex;
-                    flex-direction: column;
-                    gap: 2rem;
-                    margin-bottom: 2rem;
-                }
+    //             @media(max-width: 620px){
+    //                 font-size: 1.25rem;
+    //                 align-items: flex-start;
+    //             } 
+    //             @media (max-width: 425px){
+    //                 display: flex;
+    //                 flex-direction: column;
+    //                 gap: 2rem;
+    //                 margin-bottom: 2rem;
+    //             }
 
-            }
+    //         }
 
-            &__options-two{
-                @import url('https://fonts.googleapis.com/css?family=Lexend');
-                font-family: 'Lexend', sans-serif;
-                font-weight: 400;
-                color: #3F464A;
-                font-size: 1.188rem;
-                line-height: 3.125rem;
-                margin-bottom: 2.375rem;
-                @media(max-width: 810px){
-                    font-size: 0.9rem;
-                }
-                p{
-                    font-family: 'Lexend';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 1.25rem;
-                    letter-spacing: -0.03em;
-                    color: #3F464A;
-                }
+    //         &__options-two{
+    //             @import url('https://fonts.googleapis.com/css?family=Lexend');
+    //             font-family: 'Lexend', sans-serif;
+    //             font-weight: 400;
+    //             color: #3F464A;
+    //             font-size: 1.188rem;
+    //             line-height: 3.125rem;
+    //             margin-bottom: 2.375rem;
+    //             @media(max-width: 810px){
+    //                 font-size: 0.9rem;
+    //             }
+    //             p{
+    //                 font-family: 'Lexend';
+    //                 font-style: normal;
+    //                 font-weight: 400;
+    //                 font-size: 1.188rem;
+    //                 letter-spacing: -0.03em;
+    //                 color: #3F464A;
+    //                 @media (max-width: 1000px){
+    //                     font-size: 1rem;
+    //                 }
+    //             }
 
-                @media(max-width: 620px){
-                    font-size: 1.25rem;
-                    align-items: flex-start;
-                } 
-                @media (max-width: 425px){
-                    display: flex;
-                    flex-direction: column;
-                    gap: 2rem;
-                }
-            }
+    //             @media(max-width: 620px){
+    //                 font-size: 1.25rem;
+    //                 align-items: flex-start;
+    //             } 
+    //             @media (max-width: 425px){
+    //                 display: flex;
+    //                 flex-direction: column;
+    //                 gap: 2rem;
+    //             }
+    //         }
 
-            &__options-three{
-                color: #3F464A;
-                @import url('https://fonts.googleapis.com/css?family=Lexend');
-                font-family: 'Lexend', sans-serif;
-                font-weight: 400;
-                font-size: 1.25rem;
-                line-height: 1.563rem;
+    //         &__options-three{
+    //             color: #3F464A;
+    //             @import url('https://fonts.googleapis.com/css?family=Lexend');
+    //             font-family: 'Lexend', sans-serif;
+    //             font-weight: 400;
+    //             font-size: 1.25rem;
+    //             line-height: 1.563rem;
 
-                &__contact{
-                    margin-bottom: 2.75rem;
+    //             &__contact{
+    //                 margin-bottom: 2.75rem;
+    //                 margin-top: 1rem;
+    //                 &__footer-email{
+    //                     display: flex;
+    //                     flex-direction: row;
+    //                     gap: 1.938rem;
+    //                     margin-bottom: 1.688rem;
+    //                     color: #3F464A;
+    //                     @import url('https://fonts.googleapis.com/css?family=Lexend');
+    //                     font-family: 'Lexend', sans-serif;
+    //                     font-size: 1.25rem;
+    //                     font-weight: 400;
 
-                    &__footer-email{
-                        display: flex;
-                        flex-direction: row;
-                        gap: 1.938rem;
-                        margin-bottom: 1.688rem;
-                        color: #3F464A;
-                        @import url('https://fonts.googleapis.com/css?family=Lexend');
-                        font-family: 'Lexend', sans-serif;
-                        font-size: 1.25rem;
-                        font-weight: 400;
+    //                     @media(max-width: 810px){
+    //                         font-size: 1rem;
+    //                         gap: 0.9rem;
+    //                     }
 
-                        @media(max-width: 810px){
-                            font-size: 1rem;
-                            gap: 0.9rem;
-                        }
+    //                     @media(max-width: 650px){
+    //                         font-size: 0.9rem;
+    //                         gap: 0.6rem;
+    //                     }
 
-                        @media(max-width: 650px){
-                            font-size: 0.9rem;
-                            gap: 0.6rem;
-                        }
+    //                     @media(max-width: 1000px){
+    //                         font-size: 1rem;
+    //                         gap: 1rem;
+    //                         margin-bottom: 1.563rem;
+    //                     } 
+    //                     p{
+    //                         font-size: 1.188rem;
+    //                         @media (max-width: 1000px){
+    //                             font-size: 1rem;
+    //                         }
+    //                     }
+    //                     &__icon{
+    //                         width: 19px;
+    //                         height: 20px;
+    //                         @media(max-width: 500px){
+    //                             width: 24px;
+    //                             height: 25px;
+    //                         } 
+    //                     }
+    //                 }
 
-                        @media(max-width: 620px){
-                            font-size: 1.25rem;
-                            gap: 1.8rem;
-                            margin-bottom: 3.563rem;
-                        } 
+    //                 &__footer-contact{
+    //                     display: flex;
+    //                     flex-direction: row;
+    //                     gap: 1.938rem;
+    //                     color: #3F464A;
+    //                     @import url('https://fonts.googleapis.com/css?family=Lexend');
+    //                     font-family: 'Lexend', sans-serif;
+    //                     font-size: 1.25rem;
+    //                     font-weight: 400;
 
+    //                     @media(max-width: 810px){
+    //                         font-size: 1rem;
+    //                         gap: 1rem;
+    //                     }
 
-                        &__icon{
-                            width: 19px;
-                            height: 20px;
+    //                     @media(max-width: 650px){
+    //                         font-size: 0.9rem;
+    //                         gap: 0.6rem;
+    //                     }
 
-                            @media(max-width: 500px){
-                                width: 24px;
-                                height: 25px;
-                            } 
-                        }
-                    }
+    //                     @media(max-width: 1000px){
+    //                         font-size: 1.25rem;
+    //                         margin-bottom: 1.5rem;
+    //                         gap: 1rem;
+    //                     } 
+    //                     p{
+    //                         font-size: 1.188rem;
+    //                         @media (max-width: 1000px){
+    //                             font-size: 1rem;
+    //                         }
+    //                     }
 
-                    &__footer-contact{
-                        display: flex;
-                        flex-direction: row;
-                        gap: 1.938rem;
-                        color: #3F464A;
-                        @import url('https://fonts.googleapis.com/css?family=Lexend');
-                        font-family: 'Lexend', sans-serif;
-                        font-size: 1.25rem;
-                        font-weight: 400;
+    //                     &__icon{
+    //                         width: 19px;
+    //                         height: 20px;
+    //                         @media(max-width: 500px){
+    //                             width: 24px;
+    //                             height: 25px;
+    //                         } 
+    //                     }
+    //                 }
+    //             }
 
-                        @media(max-width: 810px){
-                            font-size: 1rem;
-                            gap: 1rem;
-                        }
+    //             &__socials{
+    //                 display: flex;
+    //                 @media(max-width: 832px){
+    //                     flex-direction: column;
+    //                     gap:1.226rem;
+    //                 }
+    //                 &__icon{
+    //                     margin-left: 0;
+    //                 }
+    //                 &__text{
+    //                     color: #3F464A;
+    //                     @import url('https://fonts.googleapis.com/css?family=Lexend');
+    //                     font-family: 'Lexend', sans-serif;
+    //                     font-size: 1.25rem;
+    //                     font-weight: 400;
+    //                     margin-right: 1.438rem;
 
-                        @media(max-width: 650px){
-                            font-size: 0.9rem;
-                            gap: 0.6rem;
-                        }
+    //                     @media(max-width: 810px){
+    //                         font-size: 1rem;
+    //                     }
 
-                        @media(max-width: 620px){
-                            font-size: 1.25rem;
-                            margin-bottom: 3rem;
-                            gap: 1.8rem;
-                        } 
+    //                     @media(max-width: 650px){
+    //                         font-size: 0.9rem;
+    //                     }
 
+    //                     @media(max-width: 620px){
+    //                         font-size: 1.25rem;
+    //                     }
+    //                 }
+    //                 &__handles{
+    //                     display: flex;
+    //                     flex-direction: row;
+    //                     gap: 0.625rem;
+    //                     @media(max-width: 810px){
+    //                         gap: 0.3rem;
+    //                     }
+    //                     @media(max-width: 650px){
+    //                         gap: 0.2rem;
+    //                     }
+    //                     &__main{
+    //                         &__icons{
+    //                             @media (max-width: 832px){
+    //                             display: none;
+    //                             }
+    //                         }
+    //                     }
+    //                     &__main1{
+    //                         display: none;
+    //                         @media (max-width: 832px){
+    //                             display: flex;
+    //                             gap: 1.226rem;
+    //                             margin-top: 1rem;
+    //                         }
+    //                     }
+    //                     // &__icons{
+    //                     //     width: 20px;
+    //                     //     height: 20px;
+    //                     //     @media(max-width: 620px){
+    //                     //         display: none;
+    //                     //     } 
+    //                     // }
+    //                     // &__icon{
+    //                     //     margin-left: 1rem;
+    //                     //     @media(min-width: 621px){
+    //                     //         display: none;
+    //                     //     }
+    //                     // }
+    //                 }
+    //             }
+    //         }
+    //     } 
 
-                        &__icon{
-                            width: 19px;
-                            height: 20px;
+    //     .copyright{
+    //         display: flex;
+    //         text-align: center;
+    //         justify-content: center;
+    //         align-items: center;
+    //         margin-top: 4.375rem;
+    //         margin-bottom: 2.188rem;
+    //         color: #3F464A;
+    //         @import url('https://fonts.googleapis.com/css?family=Lexend');
+    //         font-family: 'Lexend', sans-serif;
+    //         font-size: 0.875rem;
+    //         font-weight: 400;
+    //         line-height: 1.75rem;
 
-                            @media(max-width: 500px){
-                                width: 24px;
-                                height: 25px;
-                            } 
-                        }
-                    }
-                }
-
-                &__socials{
-                    display: flex;
-                    @media(max-width: 620px){
-                        flex-direction: column;
-                        gap:1.226rem;
-                    }
-                    &__icon{
-                        margin-left: 0;
-                    }
-                    &__text{
-                        color: #3F464A;
-                        @import url('https://fonts.googleapis.com/css?family=Lexend');
-                        font-family: 'Lexend', sans-serif;
-                        font-size: 1.25rem;
-                        font-weight: 400;
-                        margin-right: 1.438rem;
-
-                        @media(max-width: 810px){
-                            font-size: 1rem;
-                        }
-
-                        @media(max-width: 650px){
-                            font-size: 0.9rem;
-                        }
-
-                        @media(max-width: 620px){
-                            font-size: 1.25rem;
-                        }
-                    }
-                    &__handles{
-                        display: flex;
-                        flex-direction: row;
-                        gap: 0.625rem;
-                        @media(max-width: 810px){
-                            gap: 0.3rem;
-                        }
-                        @media(max-width: 650px){
-                            gap: 0.2rem;
-                        }
-                        &__main{
-                            &__icons{
-                                @media (max-width: 400px){
-                                display: none;
-                            }
-                            }
-                        }
-                        &__main1{
-                            @media (max-width: 425px){
-                                display: flex;
-                                gap: 1.226rem;
-                                margin-top: 1rem;
-                            }
-                        }
-                        // &__icons{
-                        //     width: 20px;
-                        //     height: 20px;
-                        //     @media(max-width: 620px){
-                        //         display: none;
-                        //     } 
-                        // }
-                        // &__icon{
-                        //     margin-left: 1rem;
-                        //     @media(min-width: 621px){
-                        //         display: none;
-                        //     }
-                        // }
-                    }
-                }
-            }
-        } 
-
-        .copyright{
-            display: flex;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            margin-top: 4.375rem;
-            margin-bottom: 2.188rem;
-            color: #3F464A;
-            @import url('https://fonts.googleapis.com/css?family=Lexend');
-            font-family: 'Lexend', sans-serif;
-            font-size: 0.875rem;
-            font-weight: 400;
-            line-height: 1.75rem;
-
-        }
-    }
+    //     }
+    // }
 
 }
