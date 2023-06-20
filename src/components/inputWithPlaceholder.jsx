@@ -16,8 +16,8 @@ function InputWithPlaceholder(props) {
   }
   return (
     <>
-    <div className={`constant-placeholder ${showElement ? 'show-content' : ''}`}  onClick={handleClick}>
-        <h5>{props.h5}</h5>
+    <div className={`constant-placeholder ${showElement ? 'show-contents' : ''}`}  onClick={handleClick}>
+        <h5 className={`constant-placeholder__label ${showElement ? 'show-contents__label' : ''}`}>{props.h5}</h5>
         {showElement && 
         <input
         name={props?.name}
@@ -28,7 +28,7 @@ function InputWithPlaceholder(props) {
         onBlur={handleFocus}
         focused={focused.toString()}
         // pattern={props.pattern}
-        className={`constant-placeholder__input-two ${showElement ? 'show-content__input-two' : ''}`}
+        className={`constant-placeholder__input-one ${showElement ? 'show-contents__input-one' : ''}`}
         />
         }
     </div>

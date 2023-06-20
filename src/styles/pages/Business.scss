@@ -175,7 +175,7 @@
             justify-content: center;
             align-items: center;
             gap: 0rem;
-            margin-bottom: 7.5rem;
+            margin-bottom: 2.125rem;
         }
 
         &__image-mobile{
@@ -350,13 +350,13 @@
             max-width: 28.5rem;
         }
 
-        @media(max-width: 450px){
+        @media(max-width: 500px){
             width: 100%;
             background: none;
             max-width: none;
             box-shadow: none;
             border-radius: none;
-            margin-bottom: 4.688rem;
+            margin-bottom: 0;
             padding-top: 0rem;
             padding-bottom: 0rem;
         }
@@ -426,13 +426,14 @@
                 }
                 &__check{
                     display: flex;
-                    margin-bottom: 1rem;
+                    margin-bottom: 4rem;
                     gap: 1rem;
                     @media (max-width: 768px){
                         gap: 0.6rem;
                     }
                     @media (max-width: 500px){
                         gap: 0.3rem;
+                        margin-bottom: 1rem;
                     }
                     &__box{
                         @media (max-width: 768px){
@@ -444,6 +445,7 @@
                     }
                     label{
                         font-family: 'Lexend';
+                        color: #6E768A;
                         font-size: 1rem;
                         @media (max-width: 768px){
                             font-size: 0.8rem;

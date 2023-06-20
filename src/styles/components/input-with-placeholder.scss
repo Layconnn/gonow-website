@@ -10,11 +10,11 @@
     padding-right: 1rem;
     width: 100%;
     @media (max-width: 500px){
-        padding-bottom: 0.5rem;
-        padding-top: 0.5rem;
-        padding-left: 0.8rem;
+        padding-top: 1.625rem;
+        padding-bottom: 1.625rem;
+        padding-left: 1.25rem;
     }
-    h5{
+    &__label{
         font-family: 'Lexend';
         font-weight: 400;
         font-size: 1.063rem;
@@ -25,12 +25,12 @@
         color: #6E768A;
         transition: transform 0.3s ease;
         @media (max-width: 500px){
-            font-size: 0.613rem;
             line-height: unset;
             padding-bottom: 0;
+            font-size: 0.813rem;
         }
     }
-    &__input-two{
+    &__input-one{
         font-family: 'Lexend';
         font-weight: 400;
         font-size: 1.063rem;
@@ -46,11 +46,12 @@
         width: 100%;
         @media (max-width: 500px){
             line-height: unset;
-            font-size: 0.8rem;
+            font-size: 1.063rem;
         }
     }
-    &__input-two::placeholder{
-        color: lightgray;
+    &__input-one::placeholder{
+        color: rgba(222, 222, 222, 1);
+
     }
     // &__error{
     //     display: none;
@@ -65,28 +66,28 @@
 }
 
 
-.show-content{
+.show-contents{
     padding-top: 0.938rem;
     padding-bottom: 1rem;
     @media (max-width: 500px){
-        padding-top: 0.538rem;
-        padding-bottom: 0.7rem;
+        padding-top: 1.625rem;
+        padding-bottom: 1.625rem;
+        padding-left: 1.25rem;
     }
 }
 
-.show-content__input-two{
+.show-contents__input-one{
     display: block;
     transition: ease-in-out 0.3s;
     @media (max-width: 500px){
-        font-size: 0.6rem;
+        font-size: 1.063rem;
     }
 }
 
-.show-content h5{
+.show-contents__label{
     transform: translateY(-0.313rem);
     font-size: 0.813rem;
     @media (max-width: 500px){
         transform: translateY(-0.19rem);
-        font-size: 0.5rem;
     }
 }
