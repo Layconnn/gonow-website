@@ -1,4 +1,5 @@
 import React from "react";
+"../styles/components/Input/Inputtwo.scss";
 
 function Inputtwo(props){
     

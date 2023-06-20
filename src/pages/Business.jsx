@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/pages/Business.scss";
 import Input from "../components/Input/Input";
 import InputWithPlaceholder from "../components/inputWithPlaceholder";
 import Validation from "../components/validation";

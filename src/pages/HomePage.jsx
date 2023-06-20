@@ -1,5 +1,6 @@
 import React from "react";
 import Inputtwo from "../components/Input/Inputtwo";
+import "../styles/pages/HomePage.scss";
 import { useNavigate } from "react-router";
 import Footer from "../components/footer";
 /*import Header from "../components/Header/Header";*/

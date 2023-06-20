@@ -17,8 +17,8 @@ function CountryInput(props) {
     }
   return ( 
     <>
-        <div className={`constant-placeholder ${showElement ? 'show-content' : ''}`}  onClick={handleClick}>
-            <h5>{props.h5}</h5>
+        <div className={`constant-placeholders ${showElement ? 'show-content2' : ''}`}  onClick={handleClick}>
+            <h5 className={`constant-placeholders__label ${showElement ? 'show-content2__label' : ''}`}  >{props.h5}</h5>
             {showElement && 
                    <PhoneInput
                    defaultCountry="NG"

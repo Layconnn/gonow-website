@@ -9,11 +9,6 @@
     max-width: 28.688rem;
     padding-right: 1rem;
     width: 100%;
-    @media (max-width: 500px){
-        padding-top: 1.625rem;
-        padding-bottom: 1.625rem;
-        padding-left: 1.25rem;
-    }
     &__label{
         font-family: 'Lexend';
         font-weight: 400;
@@ -27,7 +22,6 @@
         @media (max-width: 500px){
             line-height: unset;
             padding-bottom: 0;
-            font-size: 0.813rem;
         }
     }
     &__input-one{
@@ -46,7 +40,6 @@
         width: 100%;
         @media (max-width: 500px){
             line-height: unset;
-            font-size: 1.063rem;
         }
     }
     &__input-one::placeholder{
@@ -67,12 +60,9 @@
 
 
 .show-contents{
-    padding-top: 0.938rem;
-    padding-bottom: 1rem;
     @media (max-width: 500px){
-        padding-top: 1.625rem;
-        padding-bottom: 1.625rem;
-        padding-left: 1.25rem;
+        padding-top: 1rem;
+        padding-bottom: 0.938rem;
     }
 }
 
