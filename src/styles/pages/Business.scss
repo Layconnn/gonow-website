@@ -428,10 +428,16 @@
                     display: flex;
                     margin-bottom: 1rem;
                     gap: 1rem;
+                    @media (max-width: 768px){
+                        gap: 0.6rem;
+                    }
                     @media (max-width: 500px){
                         gap: 0.3rem;
                     }
                     &__box{
+                        @media (max-width: 768px){
+                            width: 1.875rem;
+                        }
                         @media (max-width: 500px){
                             width: 1.25rem;
                         }
@@ -439,6 +445,9 @@
                     label{
                         font-family: 'Lexend';
                         font-size: 1rem;
+                        @media (max-width: 768px){
+                            font-size: 0.8rem;
+                        }
                         @media (max-width: 500px){
                             font-size: 0.6rem;
                         }
