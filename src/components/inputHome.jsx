@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from 'react';
 import '../styles/components/input-two.scss';
 
-function InputTwo(props){
+function InputHome(props){
     const [focused, setFocused] = useState(false)
     const [showElement, setShowElement] = useState(false);
   
@@ -36,4 +36,4 @@ function InputTwo(props){
         </>
     );
 }
-export default InputTwo;
+export default InputHome;

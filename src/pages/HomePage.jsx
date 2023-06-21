@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/pages/HomePage.scss";
 import { useNavigate } from "react-router";
 import Footer from "../components/footer";
-import InputTwo from "../components/Inputtwo";
+import InputTwo from "../components/inputHome";
 /*import Header from "../components/Header/Header";*/
 
 function Homepage(){
