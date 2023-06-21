@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from 'react';
-import '../styles/components/input-two.scss'
+import '../styles/components/input-two.scss';
 
 function InputTwo(props){
     const [focused, setFocused] = useState(false)
