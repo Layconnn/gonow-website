@@ -7,12 +7,12 @@ export default function Validation(values) {
     const phone_pattern = /^\d{11}$/;
 
     if(values.name === ""){
-        errors.name = "First Name is Required";
+        errors.name = "Full Name is Required";
     }
 
-    if(values.is_whatsapp === ""){
-        errors.is_whatsapp = "Last Name is required";
-    }
+    // if(values.is_whatsapp === ""){
+    //     errors.is_whatsapp = "Last Name is required";
+    // }
 
     if(values.email === ""){
         errors.email = "Email is required";

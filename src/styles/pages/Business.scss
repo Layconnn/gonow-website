@@ -80,16 +80,28 @@
             background-color: #1E1E1E;
             color:#FFFFFF;
             border-radius: 0.313rem;
-            padding: 1.094rem 4.063rem;   
-            @media (max-width: 768px){
+            padding: 1.094rem 4.063rem;  
+            @media (max-width: 1024px){
+                max-width: 10rem;
+                width: 100%;
+                align-items: center;
+                height: 3rem;
+                justify-content: center;
+                display: flex;
+                border-radius: 5px;
+                padding: 0;
+            }
+            @media (max-width: 769px){
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 background-color: #1E1E1E;
                 color:#FFFFFF;
-                max-width: 4rem;
-                height: 3rem;
-                font-size: 1rem;
+                max-width: 7rem;
+                height: 2.5rem;
+                width: 100%;
+                padding: 0;
+                font-size: 0.8rem;
             }
     
             @media(max-width: 545px){
@@ -438,6 +450,7 @@
                         margin-bottom: 1rem;
                     }
                     &__box{
+                        cursor: pointer;
                         @media (max-width: 768px){
                             width: 1.875rem;
                         }

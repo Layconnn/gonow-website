@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/pages/Business.scss";
 // import Input from "../components/Input/Input";
 import InputWithPlaceholder from "../components/inputWithPlaceholder";
 import Validation from "../components/validation";
 import { useNavigate } from "react-router";
 import Api from "../api/api";
+// import HomeInput from "../components/homeInput";
 import CountryInput from "../components/countryInput";
 import Footer from "../components/footer";
 /*import Header from "../components/Header/Header";*/
@@ -22,9 +23,17 @@ function Business(){
     const [errors, setErrors] = useState({})
 
     const handleCheckboxChange = (e) => {
-        values.is_whatsapp = true
+        if (!isWhatsAppNumber){
+            values.is_whatsapp = true
+        }else if(isWhatsAppNumber){
+            values.is_whatsapp = false
+        }
         setIsWhatsAppNumber(e.target.checked);
       };
+
+      useEffect(() => {
+        console.log(values)
+      })
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -39,7 +48,7 @@ function Business(){
         .catch(err => console.log(err));
         if(values.name && values.is_whatsapp && values.email && values.phone){
             router('/')
-        } else if(!values.name && !values.is_whatsapp && !values.email && !values.phone){
+        } else if(values.name === '' && values.is_whatsapp === '' && !values.email === '' && values.phone === ''){
             errors
         } 
     };
@@ -90,40 +99,36 @@ function Business(){
                                 <InputWithPlaceholder 
                                 name= 'name'
                                 type='text'
-                                h5='First Name'
+                                h5='Full Name'
                                 onChange= {handleInput}
-                                placeholder='Emmanuel'
                                 value= {values.name}
                                 />
                                 {errors.name && <span className='error' >{errors.name}</span> }
                             </div>
 
-                            <div className="signup-form__info__inputs__lname">
+                            {/* <div className="signup-form__info__inputs__lname">
                                 <InputWithPlaceholder 
                                 name= 'name'
                                 type='text'
                                 h5='Last Name'
                                 value= {values.name}
                                 onChange= {handleInput}
-                                placeholder='Joe'
                                 // pattern= '^[a-zA-Z]{3,}$'
                                 />
                                 {errors.is_whatsapp && <span className='error'>{errors.name}</span> }
-                            </div>
+                            </div> */}
                            
                            <div className="signup-form__info__inputs__email">
                             <InputWithPlaceholder
                                 // pattern= '/^(?![.-])((?![_.-][_.-])[a-zA-Z\d.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}$/'
                                 name= 'email'
                                 type= 'email'
-                                placeholder= 'johndoe@mail.com'
                                 onChange= {handleInput}
                                 value= {values.email}
                                 h5='Email'
                                 />
                                 {errors.email && <span className='error' >{errors.email}</span> }
                            </div>
-                           
                            {/* <div className="signup-form__info__inputs__phone">
                             <InputWithPlaceholder 
                                 // pattern= '^\d{11}$'
@@ -138,12 +143,11 @@ function Business(){
                            </div> */}
                            <div className="signup-form__info__inputs__phone">
                                 <CountryInput 
-                                        name= 'phone'
-                                        h5= 'Whatsapp Number'
-                                        onChange= {handleInput}
-                                        placeholder ='90100000000'
+                                        placeholder='+234'
+                                        h5= 'Phone Number'
+                                        onChange={(value) => setValues({...values, phone: value})}
+                                        value={values.phone}
                                         type='tel'
-                                        value= {values.phone}  
                                 />
                                   {errors.phone && <span className='error' >{errors.phone}</span> }
                            </div>
@@ -153,7 +157,6 @@ function Business(){
                                 type="checkbox"
                                 className="signup-form__info__inputs__check__box"
                                 checked={isWhatsAppNumber}
-                                value={values.is_whatsapp}
                                 onChange={handleCheckboxChange}
                             />
                             <label>This is my whatsapp Number </label>

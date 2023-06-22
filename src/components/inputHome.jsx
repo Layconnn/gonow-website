@@ -1,39 +1,52 @@
-import React from "react";
-import { useState } from 'react';
-import '../styles/components/input-home.scss';
+import React, { useEffect, useRef } from "react";
+import { useState } from "react";
+import "../styles/components/input-home.scss";
 
-function InputHome(props){
-    const [focused, setFocused] = useState(false)
-    const [showElement, setShowElement] = useState(false);
-  
-  
-    const handleClick = () => {
-      setShowElement(true);
-    };
-  
-    const handleFocus = () => {
-      setFocused(true);
+function InputHome(props) {
+  const [show, setShow] = useState(false);
+
+  const handleClick = () => {
+    setShow(true);
+  };
+
+  const inputApi = props.value
+
+  const handleBlury = () => {
+    if(inputApi === '' || !inputApi){
+      setShow(false)
+    }else{
+      ''
     }
-    
-    return(
-        <>
-            <div className={`placeholder ${showElement ? 'show' : ''}`}  onClick={handleClick}>
-                <h5 className={`placeholder__label ${showElement ? 'show__label' : ''}`}>{props.h5}</h5>
-                {showElement && 
-                <input
-                name={props?.name}
-                type={props.type}
-                value={props.value}
-                placeholder={props.placeholder}
-                onChange={props.onChange}
-                onBlur={handleFocus}
-                focused={focused.toString()}
-                // pattern={props.pattern}
-                className={`placeholder__input-one ${showElement ? 'show__input-one' : ''}`}
-                />
-                }
-            </div>
-        </>
-    );
+  }
+
+
+  return (
+    <>
+      <div
+        className={`placeholder ${show ? "show" : ""}`}
+        onClick={handleClick}
+      >
+        <h5
+          className={`placeholder__label ${show ? "show__label" : ""}`}
+        >
+          {props.h5}
+        </h5>
+        {show && 
+          <input
+            name={props?.name}
+            type={props.type}
+            onBlur={handleBlury}
+            autoFocus
+            value={inputApi}
+            placeholder={props.placeholder}
+            onChange={props.onChange}
+            className={`placeholder__input-one ${
+              show ? "show__input-one" : ""
+            }`}
+          />
+        }
+      </div>
+    </>
+  );
 }
 export default InputHome;

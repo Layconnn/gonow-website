@@ -86,16 +86,27 @@
             color:#FFFFFF;
             border-radius: 5px;
             padding: 1.094rem 4.063rem;   
-    
-            @media (max-width: 768px){
+            @media (max-width: 1024px){
+                max-width: 10rem;
+                width: 100%;
+                align-items: center;
+                height: 3rem;
+                justify-content: center;
+                display: flex;
+                border-radius: 5px;
+                padding: 0;
+            }
+            @media (max-width: 769px){
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 background-color: #1E1E1E;
                 color:#FFFFFF;
-                max-width: 4rem;
-                height: 3rem;
-                font-size: 1rem;
+                max-width: 7rem;
+                height: 2.5rem;
+                width: 100%;
+                padding: 0;
+                font-size: 0.8rem;
             }
     
             @media(max-width: 545px){
@@ -896,9 +907,9 @@
                     outline: none;
                     font-size: 1.063rem;
                     max-width: 28.688rem;
-                    height: 4.5625rem;
                     padding: 1rem;
-
+                    padding-bottom: 1.4rem;
+                    padding-top: 1.4rem;
                     @media(max-width: 1055px){
                         max-width: 26rem;
                     }
@@ -915,6 +926,15 @@
                         max-width: 20rem;
                     }
                 }
+            }
+            .level{
+                background-color: #0B88DF;
+                border: 1px solid #0B88DF;
+                font-size: 1.063rem;
+                outline: none;
+                width: 100%;
+                color: #D7EEFF;
+                font-family: 'Lexend';
             }
         }
     }

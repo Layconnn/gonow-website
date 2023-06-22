@@ -2,99 +2,148 @@ import React from "react";
 import "../styles/pages/HomePage.scss";
 import { useNavigate } from "react-router";
 import Footer from "../components/footer";
-import InputTwo from "../components/inputHome";
+import InputHome from "../components/inputHome";
+import HomeInput from "../components/homeInput";
 /*import Header from "../components/Header/Header";*/
 
-function Homepage(){
-    const date = new Date();
-    const route = useNavigate();
+function Homepage() {
+  const date = new Date();
+  const route = useNavigate();
 
-    return(
-        <div className="Home-page">
-          <div className="Home-page__container">
-            {/*<Header/>*/}
-            <div className="top">
-                <p className="top__logo">GoNow</p>
-                <div className="top__navbar">
-                    <p className="top__navbar__link" onClick={() => route('/')}>Home</p>
-                    <p className="top__navbar__linktwo">Create task</p>
-                    <p className="top__navbar__linkthree" onClick={() => route('/business')}>For Business</p>
-                </div>
-                <div className="top__GoNow">GoNow</div>
-                <div className="top-panel__menu-button">
-                    <img src="./images/menu.svg" className="menu"/>
-                    <div class="dropdown-content">
-                        <p className="dropdown-content__one" onClick={() => route('/')}>Home</p>
-                        <p className="dropdown-content__two">Create tasks</p>
-                        <p className="dropdown-content__three" onClick={() => route('/business')}>For Business</p>
-                    </div>
-                </div>
-            </div> 
-            
-            <div className="description">
-                    <img src="./images/hero-image-mobile.png" className="image-mobile"/>
-                    <div className="description__info">
-                        <p className="description__info__one">Learn, Earn Money & Get Connected</p>
-                        <p className="description__info__two">Learn industry required skills, earn money while doing so and get connected to your future employer.</p>
-                    </div>
-                    <img src="./images/hero-image.png" className="image"/>
-            </div> 
+  return (
+    <div className="Home-page">
+      <div className="Home-page__container">
+        {/*<Header/>*/}
+        <div className="top">
+          <p className="top__logo">GoNow</p>
+          <div className="top__navbar">
+            <p className="top__navbar__link" onClick={() => route("/")}>
+              Home
+            </p>
+            <p className="top__navbar__linktwo">Create task</p>
+            <p
+              className="top__navbar__linkthree"
+              onClick={() => route("/business")}
+            >
+              For Business
+            </p>
+          </div>
+          <div className="top__GoNow">Go Now</div>
+          <div className="top-panel__menu-button">
+            <img src="./images/menu.svg" className="menu" />
+            <div className="dropdown-content">
+              <p className="dropdown-content__one" onClick={() => route("/")}>
+                Home
+              </p>
+              <p className="dropdown-content__two">Create tasks</p>
+              <p
+                className="dropdown-content__three"
+                onClick={() => route("/business")}
+              >
+                For Business
+              </p>
+            </div>
+          </div>
+        </div>
 
-            <div className="get-started">
-                <img src="./images/getstarted-mobile.png" className="get-started__image__two"/>
-                <img src='./images/getstarted.png' className="get-started__image"/>
-                <div className="get-started__text">
-                    <p className="get-started__text__step">Get started in 3 easy steps</p>
-                    <div className="get-started__text__steps">
-                        <div className="get-started__text__steps__content1">
-                            <img src ="./images/youtube.svg" className="get-started__text__steps__images1"/>
-                            <p className="get-started__text__steps__one">Watch online learning videos.</p>
-                        </div>
-                        <div className="get-started__text__steps__content">
-                            <img src="./images/clipboard-list.svg" className="get-started__text__steps__images2"/>
-                            <p className="get-started__text__steps__two">Get assigned to tasks and earn money.</p>
-                        </div>
-                        <div  className="get-started__text__steps__content">
-                            <img src="./images/rocket.svg" className="get-started__text__steps__images3"/>
-                            <p className="get-started__text__steps__three">Get access to interview coaching for your career.</p>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-           
-             <div className="form">
-                <img src="./images/Group-mobile.png" className="form__images__two"/>
-                <img src="./images/Group.png" className="form__images"/>
-                <div className="form__info">
-                    <p className="form__info__big">I am interested</p>
-                    <p className="form__info__small">Curabitur sollicitudin elit est vitae placerateros convallis eu. Must be between age 15-24.</p>
-                    <form className="form__info__details">
-                        <InputTwo 
-                        h5 ="Full Name" 
-                        placeholder = 'Jane Doe'
-                        type="text"/>
-                        <InputTwo 
-                        h5 ="Phone Number" 
-                        placeholder = '08137829472'
-                        type="tel"
-                        />
-                        <InputTwo 
-                        h5='Email Address'
-                        placeholder ="johnDoe@mail.com" 
-                        type="email"
-                        /> 
-                        <select className="education-level" id="education-level"> 
-                            <option value="highest-education-level"> Highest level of Education</option>
-                            <option value="">Dave</option> 
-                            <option value="">Pumpernickel</option> 
-                            <option value="">Reeses</option> 
-                        </select>
-                        <div className="form__info__details__button">Sign up</div>
-                    </form>
-                </div>
-            </div> 
-            <Footer />
-{/*             
+        <div className="description">
+          <img src="./images/hero-image-mobile.png" className="image-mobile" />
+          <div className="description__info">
+            <p className="description__info__one">
+              Learn, Earn Money & Get Connected
+            </p>
+            <p className="description__info__two">
+              Learn industry required skills, earn money while doing so and get
+              connected to your future employer.
+            </p>
+          </div>
+          <img src="./images/hero-image.png" className="image" />
+        </div>
+
+        <div className="get-started">
+          <img
+            src="./images/getstarted-mobile.png"
+            className="get-started__image__two"
+          />
+          <img src="./images/getstarted.png" className="get-started__image" />
+          <div className="get-started__text">
+            <p className="get-started__text__step">
+              Get started in 3 easy steps
+            </p>
+            <div className="get-started__text__steps">
+              <div className="get-started__text__steps__content1">
+                <img
+                  src="./images/youtube.svg"
+                  className="get-started__text__steps__images1"
+                />
+                <p className="get-started__text__steps__one">
+                  Watch online learning videos.
+                </p>
+              </div>
+              <div className="get-started__text__steps__content">
+                <img
+                  src="./images/clipboard-list.svg"
+                  className="get-started__text__steps__images2"
+                />
+                <p className="get-started__text__steps__two">
+                  Get assigned to tasks and earn money.
+                </p>
+              </div>
+              <div className="get-started__text__steps__content">
+                <img
+                  src="./images/rocket.svg"
+                  className="get-started__text__steps__images3"
+                />
+                <p className="get-started__text__steps__three">
+                  Get access to interview coaching for your career.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="form">
+          <img src="./images/Group-mobile.png" className="form__images__two" />
+          <img src="./images/Group.png" className="form__images" />
+          <div className="form__info">
+            <p className="form__info__big">I am interested</p>
+            <p className="form__info__small">
+              Curabitur sollicitudin elit est vitae placerateros convallis eu.
+              Must be between age 15-24.
+            </p>
+            <form className="form__info__details">
+              <div>
+                <InputHome h5="Full Name" name="fname" type="text" />
+              </div>
+              <div>
+                <HomeInput h5="Phone Number" name="phone" color="white" />
+              </div>
+              <div>
+                <InputHome h5="Email" name="email" type="email" />
+              </div>
+
+              <div className="education-level">
+                <select className="level" id="education-level">
+                  <option value="highest-education-level">
+                    {" "}
+                    Highest level of Education
+                  </option>
+                  <option value="">
+                    Senior school certificate examination (SSCE)
+                  </option>
+                  <option value="">Ordinary National Diploma (OND)</option>
+                  <option value="">Higher National Diploma (HND)</option>
+                  <option value="">Bachelor of Science (BSc)</option>
+                  <option value="">Master's degree</option>
+                  <option value="">Doctorate degree</option>
+                </select>
+              </div>
+              <div className="form__info__details__button">Sign up</div>
+            </form>
+          </div>
+        </div>
+        <Footer />
+        {/*             
             <div className="footer">
                 <div className="footer__top">
                     <div className="footer__top__about">
@@ -144,8 +193,8 @@ function Homepage(){
                 </div>
                 <p className="copyright">Copyright © {date.getFullYear()} gonow</p>
             </div>  */}
-            </div>
-        </div>
-    )
+      </div>
+    </div>
+  );
 }
 export default Homepage;
