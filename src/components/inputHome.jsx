@@ -12,7 +12,7 @@ function InputHome(props) {
   const inputApi = props.value
 
   const handleBlury = () => {
-    if(inputApi === '' || !inputApi){
+    if(!inputApi || inputApi === ''){
       setShow(false)
     }else{
       ''

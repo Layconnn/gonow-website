@@ -5,108 +5,142 @@ import InputWithPlaceholder from "../components/inputWithPlaceholder";
 import Validation from "../components/validation";
 import { useNavigate } from "react-router";
 import Api from "../api/api";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import HomeInput from "../components/homeInput";
 import CountryInput from "../components/countryInput";
 import Footer from "../components/footer";
 /*import Header from "../components/Header/Header";*/
 
-function Business(){
-    const [isWhatsAppNumber, setIsWhatsAppNumber] = useState(false);
-    const [values, setValues] = useState({
-        name: "",
-        phone: "",
-        email: "",
-        is_whatsapp: false
-    })
-    const url = 'https://api-staging.liveable.ng/go/landing';
-    const router = useNavigate();
-    const [errors, setErrors] = useState({})
+function Business() {
+  const [isWhatsAppNumber, setIsWhatsAppNumber] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [values, setValues] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    is_whatsapp: false,
+  });
+  const url = "https://api-staging.liveable.ng/go/landing";
+  const router = useNavigate();
+  const [errors, setErrors] = useState({});
 
-    const handleCheckboxChange = (e) => {
-        if (!isWhatsAppNumber){
-            values.is_whatsapp = true
-        }else if(isWhatsAppNumber){
-            values.is_whatsapp = false
-        }
-        setIsWhatsAppNumber(e.target.checked);
-      };
+  const handleCheckboxChange = (e) => {
+    if (!isWhatsAppNumber) {
+      values.is_whatsapp = true;
+    } else if (isWhatsAppNumber) {
+      values.is_whatsapp = false;
+    }
+    setIsWhatsAppNumber(e.target.checked);
+  };
 
-      useEffect(() => {
-        console.log(values)
-      })
+  useEffect(() => {
+    console.log(values);
+  });
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setErrors(Validation(values));
-        Api.post(url, {
-          name: values.name,
-          phone: values.phone,
-          email: values.email,
-          is_whatsapp: isWhatsAppNumber
-        } )
-        .then((response) => {console.log(response.data)} )
-        .catch(err => console.log(err));
-        if(values.name && values.is_whatsapp && values.email && values.phone){
-            router('/')
-        } else if(values.name === '' && values.is_whatsapp === '' && !values.email === '' && values.phone === ''){
-            errors
-        } 
-    };
+  const handleSubmit = async(e) => {
+    setIsLoading(true);
+    e.preventDefault();
+    setErrors(Validation(values));
+    try{
+        const res = await Api.post(url, {
+            name: values.name,
+            phone: values.phone,
+            email: values.email,
+            is_whatsapp: isWhatsAppNumber,
+          })
+        console.log(res.data)
+    }
+      catch(err){
+        console.log(err);
+      }
+      finally{
+        setIsLoading(false)
+      }
+    if (values.name && values.is_whatsapp && values.email && values.phone) {
+        toast.success('Sign up  successful!')
+    } else if (
+      !values.name &&
+      !values.is_whatsapp && 
+      !values.email &&
+      !values.phone 
+    ) {
+      errors;
+    }
+  };
 
-    const handleInput = (e) => {
-        const newData = {...values}
-        newData[e.target.name] = e.target.value;
-        setValues(newData)
-      };
+  const handleInput = (e) => {
+    const newData = { ...values };
+    newData[e.target.name] = e.target.value;
+    setValues(newData);
+  };
 
-    return(
-        <div className="Business-page">
-          <div className="Business-page__container">
-            {/*<Header/>*/}
+  return (
+    <div className="Business-page">
+      <div className="Business-page__container">
+        {/*<Header/>*/}
 
-          <div className="top">
-             <p className="top__logo">GoNow</p>
-             <div className="top__navbar">
-                 <p className="top__navbar__link" onClick={() => router('/')}>Home</p>
-                 <p className="top__navbar__linktwo">Create tasks</p>
-                 <p className="top__navbar__linkthree" onClick={() => router('/business')}>For Business</p>
-             </div>
-             <div className="top__GoNow">Go Now</div>
-             <div className="top-panel__menu-button">
-                 <img src="./images/menu.svg" className="menu"/>
-                 <div className="dropdown-content">
-                     <p onClick={() => router('/')}>Home</p>
-                     <p>Create tasks</p>
-                     <p onClick={() => router('/business')}>For Business</p>
-                 </div>
-             </div>
-         </div>
+        <div className="top">
+          <p className="top__logo">GoNow</p>
+          <div className="top__navbar">
+            <p className="top__navbar__link" onClick={() => router("/")}>
+              Home
+            </p>
+            <p className="top__navbar__linktwo">Create tasks</p>
+            <p
+              className="top__navbar__linkthree"
+              onClick={() => router("/business")}
+            >
+              For Business
+            </p>
+          </div>
+          <div className="top__GoNow">Go Now</div>
+          <div className="top-panel__menu-button">
+            <img src="./images/menu.svg" className="menu" />
+            <div className="dropdown-content">
+              <p onClick={() => router("/")}>Home</p>
+              <p>Create tasks</p>
+              <p onClick={() => router("/business")}>For Business</p>
+            </div>
+          </div>
+        </div>
 
-         <div className="page-description">
-                <img src="./images/business-mobile.png" className="page-description__image-mobile"/>
-                <div className="page-description__info">
-                    <p className="page-description__info__one">Outsource your simple but time-consuming tasks</p>
-                    <p className="page-description__info__two">Get them done in record time, at great rates and increase your social impact while at it</p>
+        <div className="page-description">
+          <img
+            src="./images/business-mobile.png"
+            className="page-description__image-mobile"
+          />
+          <div className="page-description__info">
+            <p className="page-description__info__one">
+              Outsource your simple but time-consuming tasks
+            </p>
+            <p className="page-description__info__two">
+              Get them done in record time, at great rates and increase your
+              social impact while at it
+            </p>
+          </div>
+          <img
+            src="./images/business.png"
+            className="page-description__image"
+          />
+        </div>
+        <div className="signup-form">
+          <p className="signup-form__header">Sign up to create a task</p>
+          <div className="signup-form__info">
+            <form onSubmit={handleSubmit}>
+              <div className="signup-form__info__inputs">
+                <div className="signup-form__info__inputs__fname">
+                  <InputWithPlaceholder
+                    name="name"
+                    type="text"
+                    h5="Full Name"
+                    onChange={handleInput}
+                    value={values.name}
+                  />
+                  {errors.name && <span className="error">{errors.name}</span>}
                 </div>
-                <img src="./images/business.png" className="page-description__image"/>
-            </div> 
-            <div className="signup-form">
-                <p className="signup-form__header">Sign up to create a task</p>
-                <div className="signup-form__info">
-                    <form onSubmit={handleSubmit}>
-                    <div className="signup-form__info__inputs">
-                            <div className="signup-form__info__inputs__fname">
-                                <InputWithPlaceholder 
-                                name= 'name'
-                                type='text'
-                                h5='Full Name'
-                                onChange= {handleInput}
-                                value= {values.name}
-                                />
-                                {errors.name && <span className='error' >{errors.name}</span> }
-                            </div>
 
-                            {/* <div className="signup-form__info__inputs__lname">
+                {/* <div className="signup-form__info__inputs__lname">
                                 <InputWithPlaceholder 
                                 name= 'name'
                                 type='text'
@@ -117,19 +151,21 @@ function Business(){
                                 />
                                 {errors.is_whatsapp && <span className='error'>{errors.name}</span> }
                             </div> */}
-                           
-                           <div className="signup-form__info__inputs__email">
-                            <InputWithPlaceholder
-                                // pattern= '/^(?![.-])((?![_.-][_.-])[a-zA-Z\d.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}$/'
-                                name= 'email'
-                                type= 'email'
-                                onChange= {handleInput}
-                                value= {values.email}
-                                h5='Email'
-                                />
-                                {errors.email && <span className='error' >{errors.email}</span> }
-                           </div>
-                           {/* <div className="signup-form__info__inputs__phone">
+
+                <div className="signup-form__info__inputs__email">
+                  <InputWithPlaceholder
+                    // pattern= '/^(?![.-])((?![_.-][_.-])[a-zA-Z\d.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}$/'
+                    name="email"
+                    type="email"
+                    onChange={handleInput}
+                    value={values.email}
+                    h5="Email"
+                  />
+                  {errors.email && (
+                    <span className="error">{errors.email}</span>
+                  )}
+                </div>
+                {/* <div className="signup-form__info__inputs__phone">
                             <InputWithPlaceholder 
                                 // pattern= '^\d{11}$'
                                 name= 'phone'
@@ -141,33 +177,49 @@ function Business(){
                                 />
                                 {errors.phone && <span className="error" >{errors.phone}</span> }
                            </div> */}
-                           <div className="signup-form__info__inputs__phone">
-                                <CountryInput 
-                                        placeholder='+234'
-                                        h5= 'Phone Number'
-                                        onChange={(value) => setValues({...values, phone: value})}
-                                        value={values.phone}
-                                        type='tel'
-                                />
-                                  {errors.phone && <span className='error' >{errors.phone}</span> }
-                           </div>
-                        </div>
-                        <div className="signup-form__info__inputs__check">
-                            <input
-                                type="checkbox"
-                                className="signup-form__info__inputs__check__box"
-                                checked={isWhatsAppNumber}
-                                onChange={handleCheckboxChange}
-                            />
-                            <label>This is my whatsapp Number </label>
-                        </div>
-                        <button onClick={() => {!errors ? type="submit" : errors}}  className="signup-form__info__button">Go Now</button>
-                    </form>
+                <div className="signup-form__info__inputs__phone">
+                  <CountryInput
+                    placeholder="+234"
+                    h5="Phone Number"
+                    onChange={(value) => setValues({ ...values, phone: value })}
+                    value={values.phone}
+                    type="tel"
+                  />
+                  {errors.phone && (
+                    <span className="error">{errors.phone}</span>
+                  )}
                 </div>
-            </div>
-            <Footer /> 
+              </div>
+              <div className="signup-form__info__inputs__check">
+                <input
+                  type="checkbox"
+                  className="signup-form__info__inputs__check__box"
+                  checked={isWhatsAppNumber}
+                  onChange={handleCheckboxChange}
+                />
+                <label>This is my whatsapp Number </label>
+              </div>
+              <button
+                onClick={() => {
+                  !errors ? (type = "submit") : errors;
+                }}
+                className="signup-form__info__button"
+              >
+                {
+                    isLoading && values.name && values.email && values.is_whatsapp && values.phone
+                    ?
+                    <div className="signup-form__info__button__loading"></div>
+                    :
+                    'Go Now'
+                }
+              </button>
+              <ToastContainer />
+            </form>
+          </div>
+        </div>
+        <Footer />
 
-              {/* <div className="footer">
+        {/* <div className="footer">
                 <div className="footer__top">
                     <div className="footer__top__about">
                         <p className="footer__top__about__logo">GoNow</p>
@@ -212,8 +264,8 @@ function Business(){
                 </div>
                 <p className="copyright">Copyright © {date.getFullYear()} gonow</p>
             </div>  */}
-            </div>
-        </div>
-    )
+      </div>
+    </div>
+  );
 }
 export default Business;
