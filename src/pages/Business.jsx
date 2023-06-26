@@ -10,17 +10,19 @@ import 'react-toastify/dist/ReactToastify.css';
 // import HomeInput from "../components/homeInput";
 import CountryInput from "../components/countryInput";
 import Footer from "../components/footer";
+import ErrorMessage from "../components/form-comps/errorMessage";
 /*import Header from "../components/Header/Header";*/
 
 function Business() {
   const [isWhatsAppNumber, setIsWhatsAppNumber] = useState(false);
+  const [triedToSubmit, setTriedToSubmit] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [values, setValues] = useState({
     name: "",
     phone: "",
     email: "",
-    is_whatsapp: false,
-  });
+    is_whatsapp: false
+});
   const url = "https://api-staging.liveable.ng/go/landing";
   const router = useNavigate();
   const [errors, setErrors] = useState({});
@@ -39,10 +41,12 @@ function Business() {
   });
 
   const handleSubmit = async(e) => {
-    setIsLoading(true);
-    e.preventDefault();
+    setTriedToSubmit(true);
+    // e.preventDefault()
     setErrors(Validation(values));
-    try{
+    if (values.name && values.phone && values.email ) {
+      setIsLoading(true);
+      try{
         const res = await Api.post(url, {
             name: values.name,
             phone: values.phone,
@@ -57,16 +61,8 @@ function Business() {
       finally{
         setIsLoading(false)
       }
-    if (values.name && values.is_whatsapp && values.email && values.phone) {
         toast.success('Sign up  successful!')
-    } else if (
-      !values.name &&
-      !values.is_whatsapp && 
-      !values.email &&
-      !values.phone 
-    ) {
-      errors;
-    }
+    } 
   };
 
   const handleInput = (e) => {
@@ -75,6 +71,9 @@ function Business() {
     setValues(newData);
   };
 
+  // const number = values.phone;
+
+  const email_pattern = /^(?![.-])((?![_.-][_.-])[a-zA-Z\d.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}$/;
   return (
     <div className="Business-page">
       <div className="Business-page__container">
@@ -137,7 +136,13 @@ function Business() {
                     onChange={handleInput}
                     value={values.name}
                   />
-                  {errors.name && <span className="error">{errors.name}</span>}
+                  {/* {
+                    triedToSubmit && !values.name && <ErrorMessage message={ values.name ? "" : "Full Name is required" } />
+                  } */}
+                  {triedToSubmit && !values.name
+                  &&
+                  <span className="error">{errors.name}</span>
+                  }
                 </div>
 
                 {/* <div className="signup-form__info__inputs__lname">
@@ -161,9 +166,13 @@ function Business() {
                     value={values.email}
                     h5="Email"
                   />
-                  {errors.email && (
+                   {/* {
+                    triedToSubmit && !email_pattern.test(values.email) && <ErrorMessage message={ values.email ? "Please enter a valid email" : "Email is required" } />
+                  } */}
+                  {triedToSubmit && !email_pattern.test(values.email)
+                  &&
                     <span className="error">{errors.email}</span>
-                  )}
+                  }
                 </div>
                 {/* <div className="signup-form__info__inputs__phone">
                             <InputWithPlaceholder 
@@ -185,9 +194,17 @@ function Business() {
                     value={values.phone}
                     type="tel"
                   />
-                  {errors.phone && (
+                   {/* {
+                    triedToSubmit && values.phone.length !== 14 && <ErrorMessage message={ values.phone ? "Invalid phone number" : "Your number is required" } />
+                  } */}
+                  {triedToSubmit && values.phone?.length !== 14
+                  &&
                     <span className="error">{errors.phone}</span>
-                  )}
+                  // number?.length !== 14 && values.phone
+                  // ?
+                  //   <span className="error">Invalid Phone number</span>
+                  // : 
+                  }
                 </div>
               </div>
               <div className="signup-form__info__inputs__check">
@@ -200,13 +217,13 @@ function Business() {
                 <label>This is my whatsapp Number </label>
               </div>
               <button
-                onClick={() => {
-                  !errors ? (type = "submit") : errors;
-                }}
+                // onClick={() => {
+                //   values ? (type = "submit") : '';
+                // }}
                 className="signup-form__info__button"
               >
                 {
-                    isLoading && values.name && values.email && values.is_whatsapp && values.phone
+                    isLoading && values.name && values.email && values.phone
                     ?
                     <div className="signup-form__info__button__loading"></div>
                     :
